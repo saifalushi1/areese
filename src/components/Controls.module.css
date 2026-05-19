@@ -7,6 +7,8 @@
   padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
   font-family: var(--font-primary);
   transition: opacity 0.35s var(--ease-out);
+  /* Keep Prev/Next at a stable viewport position when slide copy length varies */
+  min-height: 7.5rem;
 }
 
 .footer[data-locked="true"] {
