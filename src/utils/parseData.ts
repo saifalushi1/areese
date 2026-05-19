@@ -2,6 +2,7 @@ export type Slide = {
   number: number;
   title: string;
   body: string;
+  isThankYou?: boolean;
 };
 
 export type SlideshowData = {
@@ -9,13 +10,18 @@ export type SlideshowData = {
   slides: Slide[];
 };
 
-const SLIDE_START = /^\s*(\d+)\.\s+(.+)$/;
+const SLIDE_START = /^\s*(\d+)\.\s*(.*)$/;
+
+function markThankYou(slide: Slide) {
+  slide.isThankYou = /thank you/i.test(slide.title);
+}
 
 export function parseDataMd(raw: string): SlideshowData {
   const lines = raw.replace(/\r\n/g, "\n").split("\n");
   let title = "";
   const slides: Slide[] = [];
   let current: Slide | null = null;
+  let awaitingTitle = false;
   const bodyLines: string[] = [];
 
   const flushBody = () => {
@@ -26,7 +32,11 @@ export function parseDataMd(raw: string): SlideshowData {
 
   for (const line of lines) {
     const trimmed = line.trim();
-    if (!trimmed || trimmed === "Here is the full 10-point list:") continue;
+    if (trimmed === "Here is the full 10-point list:") continue;
+    if (!trimmed) {
+      if (current && !awaitingTitle) bodyLines.push("");
+      continue;
+    }
 
     if (!title && /^Title\s+/i.test(trimmed)) {
       title = trimmed.replace(/^Title\s+/i, "").trim();
@@ -37,11 +47,22 @@ export function parseDataMd(raw: string): SlideshowData {
     if (slideMatch) {
       flushBody();
       if (current) slides.push(current);
+
+      const slideTitle = slideMatch[2].trim();
       current = {
         number: Number(slideMatch[1]),
-        title: slideMatch[2].trim(),
+        title: slideTitle,
         body: "",
       };
+      awaitingTitle = !slideTitle;
+      if (slideTitle) markThankYou(current);
+      continue;
+    }
+
+    if (awaitingTitle && current) {
+      current.title = trimmed;
+      markThankYou(current);
+      awaitingTitle = false;
       continue;
     }
 
@@ -50,6 +71,10 @@ export function parseDataMd(raw: string): SlideshowData {
 
   flushBody();
   if (current) slides.push(current);
+
+  for (const slide of slides) {
+    if (slide.number === 11) markThankYou(slide);
+  }
 
   return { title, slides };
 }

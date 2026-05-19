@@ -31,3 +31,9 @@ Allah says in the Quran: "And do not give the foolish your wealth, which Allah h
 
 10. 📿 The Nikah Itself is the Ibadah — Not the Party
 A wedding is actually a very simple process, and Islam is about simplicity and the middle path — we risk misunderstanding the importance of marriage if it's defined by the grandness of the weddings and parties. The nikah contract itself — witnessed, with a mahr, and performed with the intention of pleasing Allah — is a complete act of worship. As the Prophet ﷺ said: "When a servant of Allah marries, he has completed half of his religion, so let him fear Allah regarding the other half." (Kanz al-Ummal, Hadith 44403). The deen is completed in the contract, not the catering.
+
+11. Thank you for reading!
+اللَّهُمَّ إِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ خَيْرٌ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي فَاقْدُرْهُ لِي وَيَسِّرْهُ لِي ثُمَّ بَارِكْ لِي فِيهِ، وَإِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ شَرٌّ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي فَاصْرِفْهُ عَنِّي وَاصْرِفْنِي عَنْهُ وَاقْدُرْ لِي الْخَيْرَ حَيْثُ كَانَ ثُمَّ أَرْضِنِي بِهِ
+
+"O Allah, if You know this matter is good for me in my religion, my livelihood, and my affairs — then decree it for me, make it easy for me, and bless it for me. And if You know this matter is bad for me in my religion, my livelihood, and my affairs — then turn it away from me and turn me away from it, and decree for me what is good wherever it may be, and make me pleased with it."
+(Sahih al-Bukhari 1166)

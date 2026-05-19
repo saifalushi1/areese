@@ -1,9 +1,10 @@
 import { AnimatePresence } from "framer-motion";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Slide } from "../utils/parseData";
 import { Controls } from "./Controls";
 import { Header } from "./Header";
 import { SlideView } from "./SlideView";
+import { ThankYouView } from "./ThankYouView";
 import styles from "./Slideshow.module.css";
 
 type SlideshowProps = {
@@ -16,8 +17,17 @@ export function Slideshow({ title, slides }: SlideshowProps) {
   const [direction, setDirection] = useState(1);
   const touchStart = useRef<{ x: number; y: number } | null>(null);
 
+  const thankYouIndex = useMemo(
+    () => slides.findIndex((s) => s.isThankYou),
+    [slides],
+  );
+  const hasThankYou = thankYouIndex >= 0;
+  const lastReasonIndex = hasThankYou ? thankYouIndex - 1 : slides.length - 1;
+
   const total = slides.length;
   const current = slides[index];
+  const isThankYou = current?.isThankYou ?? false;
+  const isLastReason = hasThankYou && index === lastReasonIndex;
 
   const goTo = useCallback(
     (next: number) => {
@@ -31,11 +41,23 @@ export function Slideshow({ title, slides }: SlideshowProps) {
   const goPrev = useCallback(() => goTo(index - 1), [goTo, index]);
   const goNext = useCallback(() => goTo(index + 1), [goTo, index]);
 
+  const tryAdvance = useCallback(() => {
+    if (isThankYou) return;
+    goNext();
+  }, [goNext, isThankYou]);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (isThankYou) {
+        if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+          e.preventDefault();
+          goPrev();
+        }
+        return;
+      }
       if (e.key === "ArrowRight" || e.key === "ArrowDown") {
         e.preventDefault();
-        goNext();
+        tryAdvance();
       } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
         e.preventDefault();
         goPrev();
@@ -43,7 +65,7 @@ export function Slideshow({ title, slides }: SlideshowProps) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [goNext, goPrev]);
+  }, [goPrev, tryAdvance, isThankYou]);
 
   const onTouchStart = (e: React.TouchEvent) => {
     touchStart.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
@@ -56,8 +78,8 @@ export function Slideshow({ title, slides }: SlideshowProps) {
     touchStart.current = null;
 
     if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy)) return;
-    if (dx < 0) goNext();
-    else goPrev();
+    if (dx < 0) tryAdvance();
+    else if (!isThankYou || index > 0) goPrev();
   };
 
   if (!current) {
@@ -74,15 +96,28 @@ export function Slideshow({ title, slides }: SlideshowProps) {
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
-      <Header siteTitle={title} current={index + 1} total={total} />
+      <Header
+        siteTitle={title}
+        current={index + 1}
+        total={total}
+        label={isThankYou ? "Thank you" : "Slide"}
+      />
 
       <main className={styles.stage} aria-live="polite">
         <AnimatePresence mode="wait" custom={direction}>
-          <SlideView
-            key={current.number}
-            slide={current}
-            direction={direction}
-          />
+          {isThankYou ? (
+            <ThankYouView
+              key={current.number}
+              slide={current}
+              direction={direction}
+            />
+          ) : (
+            <SlideView
+              key={current.number}
+              slide={current}
+              direction={direction}
+            />
+          )}
         </AnimatePresence>
       </main>
 
@@ -93,11 +128,13 @@ export function Slideshow({ title, slides }: SlideshowProps) {
         onPrev={goPrev}
         onNext={goNext}
         canPrev={index > 0}
-        canNext={index < total - 1}
+        canNext={!isThankYou && index < total - 1}
+        nextLabel={isLastReason ? "Complete" : "Next"}
+        hideNext={isThankYou}
       />
 
       <p className={styles.hint} aria-hidden="true">
-        Swipe or use arrow keys
+        {isThankYou ? "Swipe back to revisit" : "Swipe or use arrow keys"}
       </p>
     </div>
   );

@@ -8,6 +8,8 @@ type ControlsProps = {
   onNext: () => void;
   canPrev: boolean;
   canNext: boolean;
+  nextLabel?: string;
+  hideNext?: boolean;
   locked?: boolean;
 };
 
@@ -19,6 +21,8 @@ export function Controls({
   onNext,
   canPrev,
   canNext,
+  nextLabel = "Next",
+  hideNext = false,
   locked = false,
 }: ControlsProps) {
   return (
@@ -48,15 +52,17 @@ export function Controls({
         >
           Prev
         </button>
-        <button
-          type="button"
-          className={styles.ghost}
-          onClick={onNext}
-          disabled={!canNext}
-          aria-label="Next slide"
-        >
-          Next
-        </button>
+        {!hideNext && (
+          <button
+            type="button"
+            className={styles.ghost}
+            onClick={onNext}
+            disabled={!canNext}
+            aria-label={nextLabel === "Complete" ? "Complete and view thank you" : "Next slide"}
+          >
+            {nextLabel}
+          </button>
+        )}
       </div>
     </footer>
   );

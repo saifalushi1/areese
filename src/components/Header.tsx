@@ -4,9 +4,10 @@ type HeaderProps = {
   siteTitle: string;
   current: number;
   total: number;
+  label?: string;
 };
 
-export function Header({ siteTitle, current, total }: HeaderProps) {
+export function Header({ siteTitle, current, total, label = "Slide" }: HeaderProps) {
   const shortTitle = siteTitle.length > 42 ? `${siteTitle.slice(0, 40)}…` : siteTitle;
 
   return (
@@ -18,7 +19,7 @@ export function Header({ siteTitle, current, total }: HeaderProps) {
         <span className={styles.name}>Areese</span>
       </div>
       <p className={styles.meta}>
-        <span className={styles.label}>Slide</span>
+        <span className={styles.label}>{label}</span>
         <span className={styles.count}>
           {String(current).padStart(2, "0")} / {String(total).padStart(2, "0")}
         </span>
