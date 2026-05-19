@@ -1,0 +1,90 @@
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: 0.35rem 1rem;
+  align-items: center;
+  padding: 1rem 1.25rem 0.75rem;
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  grid-row: span 2;
+}
+
+.monogram {
+  font-family: var(--serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.name {
+  font-size: 0.55rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.meta {
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.1rem;
+}
+
+.label {
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.count {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+}
+
+.title {
+  grid-column: 2;
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  text-align: right;
+  line-height: 1.35;
+}
+
+@media (min-width: 640px) {
+  .header {
+    padding: 1.5rem 2.5rem 1rem;
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  .brand {
+    grid-row: auto;
+  }
+
+  .meta {
+    justify-self: start;
+    align-items: flex-start;
+    padding-left: 2rem;
+    border-left: 1px solid var(--border);
+  }
+
+  .title {
+    grid-column: 3;
+    align-self: center;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+  }
+}

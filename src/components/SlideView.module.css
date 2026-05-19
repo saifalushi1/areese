@@ -1,0 +1,70 @@
+.slide {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 36rem;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.eyebrow {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+.heading {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 8vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-height: min(42vh, 18rem);
+  overflow-y: auto;
+  padding-right: 0.25rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.body p {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: var(--fg);
+}
+
+@media (min-width: 640px) {
+  .slide {
+    max-width: 42rem;
+    padding: 0 2.5rem;
+    gap: 1.25rem;
+  }
+
+  .heading {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .body {
+    max-height: min(38vh, 22rem);
+  }
+
+  .body p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+@media (min-width: 900px) {
+  .body {
+    max-height: 26rem;
+  }
+}

@@ -1,0 +1,42 @@
+.shell {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100dvh;
+  position: relative;
+}
+
+.stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.5rem 0 1rem;
+  touch-action: pan-y;
+}
+
+.hint {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(90deg);
+  transform-origin: center;
+  font-size: 0.5rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  display: none;
+  pointer-events: none;
+}
+
+.empty {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--fg-muted);
+}
+
+@media (min-width: 900px) {
+  .hint {
+    display: block;
+  }
+}
