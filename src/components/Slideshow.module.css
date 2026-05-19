@@ -20,8 +20,10 @@
   top: 50%;
   transform: translateY(-50%) rotate(90deg);
   transform-origin: center;
-  font-size: 0.5rem;
-  letter-spacing: 0.2em;
+  font-family: var(--font-primary);
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--fg-muted);
   display: none;

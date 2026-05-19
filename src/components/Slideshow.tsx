@@ -78,7 +78,11 @@ export function Slideshow({ title, slides }: SlideshowProps) {
 
       <main className={styles.stage} aria-live="polite">
         <AnimatePresence mode="wait" custom={direction}>
-          <SlideView slide={current} direction={direction} />
+          <SlideView
+            key={current.number}
+            slide={current}
+            direction={direction}
+          />
         </AnimatePresence>
       </main>
 

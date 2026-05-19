@@ -8,6 +8,7 @@ type ControlsProps = {
   onNext: () => void;
   canPrev: boolean;
   canNext: boolean;
+  locked?: boolean;
 };
 
 export function Controls({
@@ -18,9 +19,10 @@ export function Controls({
   onNext,
   canPrev,
   canNext,
+  locked = false,
 }: ControlsProps) {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} data-locked={locked}>
       <nav className={styles.dots} aria-label="Slide navigation">
         {Array.from({ length: total }, (_, i) => (
           <button
@@ -30,6 +32,7 @@ export function Controls({
             data-active={i === currentIndex}
             aria-label={`Go to slide ${i + 1}`}
             aria-current={i === currentIndex ? "step" : undefined}
+            disabled={locked}
             onClick={() => onSelect(i)}
           />
         ))}

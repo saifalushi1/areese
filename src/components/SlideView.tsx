@@ -9,26 +9,35 @@ type SlideViewProps = {
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
+function stripEmoji(text: string) {
+  return text.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\uFE0F\u200D]+\s*/u, "");
+}
+
 export function SlideView({ slide, direction }: SlideViewProps) {
-  const displayTitle = slide.title.replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}\uFE0F\u200D]+\s*/u, "");
+  const displayTitle = stripEmoji(slide.title);
+  const paragraphs = slide.body.split(/\n\n+/).map((p) => p.trim()).filter(Boolean);
 
   return (
     <motion.article
       key={slide.number}
       className={styles.slide}
-      initial={{ opacity: 0, y: direction >= 0 ? 28 : -28 }}
+      initial={{ opacity: 0, y: direction >= 0 ? 20 : -20 }}
       animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: direction >= 0 ? -20 : 20 }}
-      transition={{ duration: 0.55, ease }}
+      exit={{ opacity: 0, y: direction >= 0 ? -12 : 12 }}
+      transition={{ duration: 0.4, ease }}
     >
       <p className={styles.eyebrow}>
         Reason {String(slide.number).padStart(2, "0")}
       </p>
+
       <h1 className={styles.heading}>{displayTitle}</h1>
+
       <div className={styles.body}>
-        {slide.body.split(/\n\n+/).map((paragraph, i) => (
-          <p key={i}>{paragraph.trim()}</p>
-        ))}
+        {paragraphs.length > 0 ? (
+          paragraphs.map((paragraph, i) => <p key={i}>{paragraph}</p>)
+        ) : (
+          <p>{slide.body.trim()}</p>
+        )}
       </div>
     </motion.article>
   );
