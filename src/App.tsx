@@ -1,4 +1,5 @@
 import { FaithPerspective } from "./components/FaithPerspective";
+import { CostComparison } from "./components/CostComparison";
 import { useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import {
@@ -44,8 +45,17 @@ const choices = [
     suffix: "meals funded",
     note: "Example: $3 per meal. This is a planning assumption, not a charity quote. Check your chosen programme’s costs, including delivery.",
   },
+  {
+    name: "Hajj together",
+    kind: "hajj",
+    title: "Our first year. A sacred journey.",
+    text: "A simple walimah can leave room for something extraordinary: planning to complete Hajj together within our first year of marriage. Imagine beginning our life together with worship, gratitude, and a journey to the Kaaba.",
+    unit: 30000,
+    suffix: "of a Hajj fund for two",
+    note: "Example goal: $30,000 for two people. This is a planning target, not a package quote. Costs vary by departure country, provider, and year. Completing Hajj in our first year depends on the Hajj dates, eligibility, permits, and package availability.",
+  },
 ] as const;
-type Kind = "wedding" | "travel" | "home" | "give";
+type Kind = "wedding" | "travel" | "home" | "give" | "hajj";
 
 function Scene({ kind }: { kind: Kind }) {
   return (
@@ -60,6 +70,7 @@ function Scene({ kind }: { kind: Kind }) {
           travel: "A plane crossing mountains under a golden moon",
           home: "A house with warm windows and a growing garden",
           give: "Bowls of food underneath an olive tree",
+          hajj: "The Kaaba with its gold band, surrounded by a softly moving courtyard of pilgrims",
         }[kind]
       }
     >
@@ -272,6 +283,82 @@ function Scene({ kind }: { kind: Kind }) {
           <path d="M130 474H670" stroke="#c6ad7b" opacity=".3" />
         </g>
       )}
+      {kind === "hajj" && (
+        <g>
+          <ellipse
+            cx="400"
+            cy="430"
+            rx="310"
+            ry="63"
+            fill="#c7cbb1"
+            opacity=".06"
+          />
+          <g stroke="#a89972" strokeWidth="2" opacity=".5">
+            <path d="M75 329V235Q105 184 135 235V329M135 329V235Q165 184 195 235V329M195 329V235Q225 184 255 235V329M545 329V235Q575 184 605 235V329M605 329V235Q635 184 665 235V329M665 329V235Q695 184 725 235V329" />
+            <path d="M112 201V120H134V201M666 201V120H688V201M108 120H138M662 120H692M123 120V91M677 120V91" />
+            <path d="M108 105Q123 78 138 105M662 105Q677 78 692 105" />
+          </g>
+          <g className="pilgrim-orbit" fill="#e2dfc6">
+            {Array.from({ length: 36 }, (_, i) => {
+              const angle = (i * Math.PI * 2) / 36;
+              return (
+                <circle
+                  key={i}
+                  cx={400 + 275 * Math.cos(angle)}
+                  cy={414 + 57 * Math.sin(angle)}
+                  r={i % 3 === 0 ? 4 : 3}
+                  opacity=".65"
+                />
+              );
+            })}
+          </g>
+          <path
+            d="M272 215L445 173L545 221L373 265Z"
+            fill="#242825"
+            stroke="#8a8061"
+          />
+          <path
+            d="M272 215L373 265V439L272 388Z"
+            fill="#0d100f"
+            stroke="#8a8061"
+          />
+          <path
+            d="M373 265L545 221V391L373 439Z"
+            fill="#171a16"
+            stroke="#8a8061"
+          />
+          <path
+            className="kaaba-band"
+            d="M272 248L373 298L545 254V273L373 317L272 267Z"
+            fill="#cbb16f"
+          />
+          <path
+            d="M281 255L369 299M384 301L533 264"
+            stroke="#715d34"
+            strokeWidth="3"
+            strokeDasharray="8 7"
+          />
+          <path
+            d="M475 313L511 304V368L475 377Z"
+            fill="#cbb16f"
+            stroke="#e1cf97"
+          />
+          <path d="M483 323L503 318V359L483 364Z" stroke="#756039" />
+          <path
+            d="M373 265V439M290 280V392M351 314V424M394 326V428M529 291V395"
+            stroke="#b6af8e"
+            opacity=".14"
+          />
+          <ellipse
+            cx="400"
+            cy="471"
+            rx="170"
+            ry="9"
+            fill="#cbb16f"
+            opacity=".1"
+          />
+        </g>
+      )}
     </svg>
   );
 }
@@ -297,8 +384,8 @@ function Reveal({
 }
 
 export default function App() {
-  const [budget, setBudget] = useState(35000);
-  const [simple, setSimple] = useState(3000);
+  const [budget, setBudget] = useState(50000);
+  const [simple, setSimple] = useState(10000);
   const [selected, setSelected] = useState(0);
   const [mealCost, setMealCost] = useState(3);
   const [paused, setPaused] = useState(false);
@@ -312,7 +399,7 @@ export default function App() {
   const saved = Math.max(0, budget - simple);
   const choice = choices[selected];
   const result =
-    selected === 1
+    selected === 1 || selected === 3
       ? `${Math.round((saved / choice.unit) * 100)}%`
       : Math.floor(
           saved / (selected === 2 ? mealCost : choice.unit),
@@ -353,15 +440,12 @@ export default function App() {
               <h1>
                 A beautiful marriage.
                 <br />
-                <em>A smaller wedding.</em>
+                <em>A simple walimah.</em>
               </h1>
               <p className="lead">
                 What if your biggest day didn’t cost
                 <br /> your dreams for tomorrow?
               </p>
-              <a className="button" href="#possibilities">
-                See what your money could become <span>↗</span>
-              </a>
               <p className="hero-note">
                 An invitation to celebrate simply. And live fully.
               </p>
@@ -419,11 +503,6 @@ export default function App() {
               </a>
             </Reveal>
             <FaithPerspective />
-            <p className="small-note">
-              Expense alone does not establish a religious ruling. Details of
-              entertainment and etiquette have differing scholarly views; speak
-              to a qualified scholar about your plans.
-            </p>
           </section>
           <section id="possibilities" className="possibilities section-wrap">
             <Reveal className="section-heading">
@@ -496,55 +575,7 @@ export default function App() {
                 allowance to free up money.
               </p>
             )}
-            <Reveal className="tradeoff">
-              <div className="tradeoff-row">
-                <div className="tradeoff-label">
-                  <span>The big wedding</span>
-                  <span>{money(budget)} spent on the celebration</span>
-                </div>
-                <div className="tradeoff-track">
-                  <motion.div
-                    className="spent"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "100%" }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.2 }}
-                  />
-                </div>
-              </div>
-              <div className="tradeoff-row">
-                <div className="tradeoff-label">
-                  <span>The smaller wedding</span>
-                  <span>{money(saved)} stays with you</span>
-                </div>
-                <div className="tradeoff-track">
-                  <motion.div
-                    className="spent"
-                    initial={{ width: 0 }}
-                    whileInView={{
-                      width: `${Math.min(simple / budget, 1) * 100}%`,
-                    }}
-                    transition={{ duration: 0.7 }}
-                  />
-                  <motion.div
-                    className="kept"
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${(saved / budget) * 100}%` }}
-                    transition={{ duration: 0.7 }}
-                  />
-                </div>
-              </div>
-              <div className="tradeoff-key">
-                <span>
-                  <i />
-                  Celebration
-                </span>
-                <span>
-                  <i />
-                  Travel, a home, or giving
-                </span>
-              </div>
-            </Reveal>
+            <CostComparison budget={budget} simple={simple} />
             <div
               className="choice-tabs"
               role="group"
@@ -635,6 +666,23 @@ export default function App() {
                   </div>
                 )}
                 <p className="assumption">{choice.note}</p>
+                {selected === 3 && (
+                  <>
+                    <p className="remainder">
+                      {saved >= choice.unit
+                        ? `${money(choice.unit)} for the example Hajj goal, with ${money(saved - choice.unit)} left for other goals.`
+                        : `${money(choice.unit - saved)} more to reach the example Hajj goal.`}
+                    </p>
+                    <a
+                      className="text-link"
+                      href="https://hajj.nusuk.sa/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Explore official Hajj packages · Nusuk ↗
+                    </a>
+                  </>
+                )}
                 <p className="small-note">
                   Each option uses the same savings separately. They cannot all
                   be funded in full at once.

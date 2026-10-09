@@ -30,17 +30,11 @@ const reflections = [
   {
     title: "Haram Has No Place at a Wedding",
     paragraphs: [
-      "Celebrating a wedding should not involve prohibited practices. Alcohol does not become permissible because it is a special occasion. Neither do indecent entertainment, obscene songs, or conduct that crosses Islamic boundaries.",
-      "Many scholars prohibit instrumental music, while others permit particular forms of music and singing under conditions. Rules about gender interaction also require context. Quran 22:30 warns against false speech; it is not an explicit, universally agreed prohibition of all wedding music. Choose a simple celebration that follows the guidance of a qualified scholar you trust.",
+      "Celebrating a wedding should not involve prohibited practices. Neither should it involve indecent entertainment, obscene songs, or conduct that crosses Islamic boundaries. Instrumental music, backbiting, extravagance, and riyah are all common within weddings and explicitly forbidden. It’s not fair to yourself and your husband to create an environment that enables this.",
     ],
     links: [
-      ["Quran 5:90", "https://quran.com/5/90"],
-      ["Quran 22:30", "https://quran.com/22/30"],
-      ["A restrictive music ruling", "https://daruliftaa.us/fatwa/40/"],
-      [
-        "A conditional-permissibility ruling",
-        "https://dar-alifta.org/en/fatwa/details/22265/listening-to-music-and-songs",
-      ],
+      ["Avoid backbiting · Quran 49:12", "https://quran.com/49/12"],
+      ["Avoid wastefulness · Quran 17:26–27", "https://quran.com/17/26-27"],
     ],
   },
   {
