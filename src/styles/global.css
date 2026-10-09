@@ -1720,3 +1720,176 @@ input[type="range"]::-moz-range-thumb {
     transform: translateX(16px);
   }
 }
+.frame-joy {
+  animation: frame-glow 5s ease-in-out infinite;
+}
+.frame-waste {
+  animation: waste-sway 5s ease-in-out infinite;
+}
+.tent-star {
+  animation: twinkle 4s ease-in-out infinite;
+}
+.tent-lantern,
+.tent-glow {
+  animation: lantern-glow 3s ease-in-out infinite;
+}
+.scale-beam {
+  transform-origin: 200px 72px;
+  animation: scale-fall 7s ease-in-out infinite;
+}
+.scale-excess {
+  transform-origin: 88px 72px;
+}
+.scale-modest {
+  transform-origin: 312px 72px;
+}
+.scale-load {
+  animation: scale-upright 7s ease-in-out infinite;
+}
+.scale-crack {
+  animation: ground-crack 7s ease-in-out infinite;
+}
+.vessel-light {
+  transform-origin: 200px 216px;
+  animation: light-drain 8s ease-in-out infinite;
+}
+.vessel-inflow {
+  animation: inflow-fade 8s ease-in-out infinite;
+}
+.vessel-spotlight {
+  animation: spotlight-grow 8s ease-in-out infinite;
+}
+.vessel-leak,
+.vessel-cracks {
+  animation: vessel-leak 8s ease-in-out infinite;
+}
+@keyframes frame-glow {
+  50% {
+    filter: drop-shadow(0 0 5px #d6b27166);
+  }
+}
+@keyframes waste-sway {
+  50% {
+    transform: translateY(3px);
+  }
+}
+@keyframes lantern-glow {
+  50% {
+    opacity: 0.55;
+  }
+}
+@keyframes scale-fall {
+  0%,
+  15%,
+  100% {
+    transform: rotate(0);
+  }
+  38% {
+    transform: rotate(-24deg);
+  }
+  46% {
+    transform: rotate(-19deg);
+  }
+  54%,
+  82% {
+    transform: rotate(-22deg);
+  }
+}
+@keyframes scale-upright {
+  0%,
+  15%,
+  100% {
+    transform: rotate(0);
+  }
+  38% {
+    transform: rotate(24deg);
+  }
+  46% {
+    transform: rotate(19deg);
+  }
+  54%,
+  82% {
+    transform: rotate(22deg);
+  }
+}
+@keyframes ground-crack {
+  0%,
+  30%,
+  100% {
+    opacity: 0;
+  }
+  38%,
+  82% {
+    opacity: 1;
+  }
+}
+@keyframes light-drain {
+  0%,
+  100% {
+    transform: scaleY(0.2);
+  }
+  25%,
+  35% {
+    transform: scaleY(0.95);
+  }
+  78%,
+  88% {
+    transform: scaleY(0.08);
+  }
+}
+@keyframes inflow-fade {
+  0%,
+  20%,
+  100% {
+    opacity: 0.65;
+  }
+  35%,
+  88% {
+    opacity: 0.05;
+  }
+}
+@keyframes spotlight-grow {
+  0%,
+  20%,
+  100% {
+    opacity: 0.04;
+  }
+  40%,
+  80% {
+    opacity: 0.35;
+  }
+}
+@keyframes vessel-leak {
+  0%,
+  25%,
+  100% {
+    opacity: 0.05;
+  }
+  40%,
+  70% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 0.2;
+  }
+}
+.paused .vessel-light {
+  transform: scaleY(0.55);
+}
+.paused .scale-beam {
+  transform: rotate(-22deg);
+}
+.paused .scale-load {
+  transform: rotate(22deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .vessel-light {
+    transform: scaleY(0.55);
+  }
+  .scale-beam {
+    transform: rotate(-22deg);
+  }
+  .scale-load {
+    transform: rotate(22deg);
+  }
+}

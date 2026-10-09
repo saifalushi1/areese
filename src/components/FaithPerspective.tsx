@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PerspectiveScene } from "./PerspectiveScenes";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 const reflections = [
@@ -80,11 +81,11 @@ const reflections = [
 
 function TopicVisual({ index }: { index: number }) {
   const labels = [
-    "A softly illuminated wedding arch",
-    "A simple shared meal with a flickering candle",
-    "Coins falling into a savings jar",
+    "Two-sided frame: golden rings, flowers and joined hands beside a question mark made of wasted food and ornaments",
+    "The humble tent: a small gathering and glowing lanterns beneath a vast starry sky",
+    "The scale: excessive cakes, food and chandeliers outweigh a modest meal and crack the ground",
     "A shield protecting a celebration",
-    "A sincere heart beyond the spotlight",
+    "The leaking vessel: an ornate jar fills with golden light, then loses it through cracks beneath a spotlight",
     "A marriage contract with two wedding rings",
   ];
   return (
@@ -109,95 +110,9 @@ function TopicVisual({ index }: { index: number }) {
         strokeLinecap="round"
         strokeLinejoin="round"
       >
-        {index === 0 && (
-          <g>
-            <path
-              className="faith-draw"
-              d="M110 211V112C110 12 290 12 290 112V211M127 211V113C127 35 273 35 273 113V211"
-            />
-            <path d="M128 117Q200 153 272 117" opacity=".5" />
-            <g className="faith-float" fill="#8eaa79" stroke="none">
-              <ellipse
-                cx="112"
-                cy="95"
-                rx="12"
-                ry="6"
-                transform="rotate(-30 112 95)"
-              />
-              <ellipse
-                cx="283"
-                cy="91"
-                rx="12"
-                ry="6"
-                transform="rotate(30 283 91)"
-              />
-            </g>
-            <path d="M200 69V99M181 88H219" />
-            <circle className="flame" cx="200" cy="88" r="4" fill="#e1cca0" />
-          </g>
-        )}
-        {index === 1 && (
-          <g>
-            <ellipse cx="200" cy="176" rx="115" ry="30" />
-            <ellipse cx="200" cy="176" rx="80" ry="17" opacity=".4" />
-            <path
-              d="M123 170Q129 129 173 154Q186 174 123 170Z"
-              fill="#8c9b6c"
-            />
-            <path
-              d="M229 159Q256 131 278 165Q267 181 229 159Z"
-              fill="#8c9b6c"
-            />
-            <path d="M195 160V108H208V160M201 106V91" />
-            <ellipse
-              className="flame"
-              cx="201"
-              cy="84"
-              rx="5"
-              ry="9"
-              fill="#e4cf9e"
-            />
-            <path d="M58 131V201M68 131V153H48V131M342 129V201M335 130Q319 154 342 159" />
-          </g>
-        )}
-        {index === 2 && (
-          <g>
-            <path d="M145 100V72H255V100L272 117V205H128V117Z" fill="#263829" />
-            <path d="M155 72H245M150 133H250M157 160H243" opacity=".5" />
-            <g className="faith-coin">
-              <circle cx="200" cy="38" r="17" fill="#bda171" />
-              <text
-                x="200"
-                y="39"
-                textAnchor="middle"
-                dominantBaseline="middle"
-                fontFamily="Arial, sans-serif"
-                fontSize="24"
-                fill="#263829"
-                stroke="none"
-              >
-                $
-              </text>
-            </g>
-            {[166, 198, 230].map((x) => (
-              <g key={x}>
-                <circle cx={x} cy="187" r="13" />
-                <text
-                  x={x}
-                  y="188"
-                  textAnchor="middle"
-                  dominantBaseline="middle"
-                  fontFamily="Arial, sans-serif"
-                  fontSize="19"
-                  fill="#ceb787"
-                  stroke="none"
-                >
-                  $
-                </text>
-              </g>
-            ))}
-          </g>
-        )}
+        {index === 0 && <PerspectiveScene index={index} />}
+        {index === 1 && <PerspectiveScene index={index} />}
+        {index === 2 && <PerspectiveScene index={index} />}
         {index === 3 && (
           <g>
             <path
@@ -215,20 +130,7 @@ function TopicVisual({ index }: { index: number }) {
             </g>
           </g>
         )}
-        {index === 4 && (
-          <g>
-            <path d="M82 47L175 183M318 47L225 183" opacity=".25" />
-            <path
-              className="faith-heart"
-              d="M200 172C126 126 143 76 178 90Q200 99 200 111Q200 99 222 90C257 76 274 126 200 172Z"
-              fill="#65825e"
-            />
-            <path d="M137 212H263" />
-            <g className="faith-float">
-              <path d="M87 89V105M79 97H95M307 124V140M299 132H315" />
-            </g>
-          </g>
-        )}
+        {index === 4 && <PerspectiveScene index={index} />}
         {index === 5 && (
           <g>
             <path

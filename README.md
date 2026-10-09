@@ -23,7 +23,7 @@ The entry point is `src/App.tsx`, with styling in `src/styles/global.css`. React
 - Four chapters: perspective, possibilities, a combined plan, and a closing invitation.
 - Larger type throughout for reading across a room: 30–33px body text on a 1920px-wide display, with responsive mobile layouts.
 - A compact perspective slideshow: one overview and five faith topics, with previous/next arrows, direct slide dots, and scoped left/right keyboard navigation. Each slide has a small animated illustration. Slides advance only when the user chooses.
-- Wedding, travel, a farm with two animated horses, aid being sent to Gaza, and Kaaba illustrations with subtle continuous animation. The Israf slide’s savings-jar coins carry dollar signs.
+- Wedding, travel, a farm with two animated horses, aid being sent to Gaza, and Kaaba illustrations with subtle continuous animation. Perspective illustrations include a two-sided celebration-and-waste frame, a humble tent beneath the stars, an overloaded scale cracking the ground, and an ornate vessel leaking golden light under a spotlight.
 - A USD 50,000 starting wedding budget and USD 10,000 celebration allowance, with horizontal bars proportional to each celebration’s total cost on one shared scale.
 - Separate travel, home-fund, orphan-meal, and Hajj-for-two scenarios; editable meal cost.
 - A USD 30,000 illustrative Hajj fund, including remaining savings or the shortfall and a link to official Nusuk packages. First-year Hajj is an aspiration dependent on dates, eligibility, permits, and availability.
