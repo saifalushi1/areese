@@ -21,6 +21,8 @@ The entry point is `src/App.tsx`, with styling in `src/styles/global.css`. React
 ## Experience
 
 - Four chapters: perspective, possibilities, a combined plan, and a closing invitation.
+- Larger type throughout for reading across a room: 30–33px body text on a 1920px-wide display, with responsive mobile layouts.
+- Five unnumbered faith reflections: prophetic simplicity, israf, prohibited practices, riya, and the nikah.
 - Wedding, travel, house, and meal illustrations with subtle continuous animation.
 - Budget slider and simple-celebration allowance, with animated spending-versus-savings bars.
 - Separate travel, home-fund, and orphan-meal scenarios; editable meal cost.

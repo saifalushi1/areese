@@ -1,6 +1,6 @@
 # A different beginning
 
-The live experience is authored in `src/App.tsx`. This file records its editorial basis; the previous slideshow is no longer the entry point.
+The live experience is authored in `src/App.tsx`, with the five faith reflections in `src/components/FaithPerspective.tsx`. This file records its editorial basis; the previous slideshow is no longer the entry point.
 
 ## Main argument
 
@@ -12,6 +12,17 @@ Celebrate marriage simply and compare the opportunity cost of a large wedding wi
 - Avoid wastefulness: Quran 17:26-27, https://quran.com/17/26-27
 - Riba is prohibited: Quran 2:275, https://quran.com/2/275
 - Avoid intoxicants: Quran 5:90, https://quran.com/5/90
+- Simplicity in marriage: Abu Dawood 2117, https://sunnah.com/abudawud:2117
+- Fatima’s wedding furnishings (not her mahr): Nasa’i 3384, https://sunnah.com/nasai:3384
+- Extravagance: Quran 7:31, https://quran.com/7/31
+- Wasting wealth: Bukhari 2408 (correcting the supplied 2200 reference), https://sunnah.com/bukhari:2408
+- Sincerity and showing off: Muslim 1905a, https://sunnah.com/muslim:1905a
+- The Bayhaqi blessing narration: https://islamqa.org/hanafi/hadithanswers/120195/ (scholarly assessment; grading is not unanimous).
+- Half-of-religion reports: https://islamqa.info/en/answers/11586/is-marriage-half-of-the-religion (acceptance by al-Albani; scholarly grading differs).
+- Music rulings are not unanimous: compare https://daruliftaa.us/fatwa/40/ with https://dar-alifta.org/en/fatwa/details/22265/listening-to-music-and-songs.
+- Quran 22:30 concerns false speech; it is not quoted as an explicit universal prohibition of wedding music.
+
+The perspective section covers prophetic simplicity, israf, prohibited practices, riya, and the nikah’s importance. Claims that every expensive wedding is necessarily israf, that most weddings contain haram, or that a venue guarantees a measurable amount of barakah are not presented as established facts.
 
 Sources are linked beside the relevant statements in the experience. Entertainment and etiquette have differing scholarly interpretations. Specific plans should be discussed with a qualified scholar.
 

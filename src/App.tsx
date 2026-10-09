@@ -1,3 +1,4 @@
+import { FaithPerspective } from "./components/FaithPerspective";
 import { useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import {
@@ -417,45 +418,7 @@ export default function App() {
                 Read about the walimah · Bukhari 5167 ↗
               </a>
             </Reveal>
-            <div className="principles">
-              {[
-                [
-                  "01",
-                  "Waste adds up.",
-                  "Spending to impress can push you beyond what you need or can afford. The Qur’an warns against wastefulness.",
-                  "Qur’an 17:26–27",
-                  "https://quran.com/17/26-27",
-                ],
-                [
-                  "02",
-                  "Debt stays behind.",
-                  "The party ends. Loan repayments keep coming. Interest (riba) is prohibited in the Qur’an.",
-                  "Qur’an 2:275",
-                  "https://quran.com/2/275",
-                ],
-                [
-                  "03",
-                  "Joy has boundaries.",
-                  "A wedding does not make alcohol permissible. Choose a celebration that respects your beliefs.",
-                  "Qur’an 5:90",
-                  "https://quran.com/5/90",
-                ],
-              ].map(([n, title, text, label, url]) => (
-                <Reveal className="principle" key={n}>
-                  <span className="principle-number">{n}</span>
-                  <h3>{title}</h3>
-                  <p>{text}</p>
-                  <a
-                    className="text-link"
-                    href={url}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {label} ↗
-                  </a>
-                </Reveal>
-              ))}
-            </div>
+            <FaithPerspective />
             <p className="small-note">
               Expense alone does not establish a religious ruling. Details of
               entertainment and etiquette have differing scholarly views; speak

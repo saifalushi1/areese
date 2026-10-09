@@ -69,12 +69,12 @@ header {
 }
 .brand {
   font-family: var(--serif);
-  font-size: 30px;
+  font-size: 38px;
   letter-spacing: -1px;
 }
 .brand span {
   font-family: Arial, sans-serif;
-  font-size: 10px;
+  font-size: clamp(20px, 1.6vw, 30px);
   letter-spacing: 1px;
   color: var(--muted);
   margin-left: 20px;
@@ -83,7 +83,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 30px;
-  font-size: 11px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: #bbc4b8;
 }
 .motion-toggle {
@@ -105,7 +105,7 @@ nav {
   gap: 10px;
 }
 .eyebrow {
-  font-size: 10px;
+  font-size: clamp(20px, 1.6vw, 30px);
   letter-spacing: 2.2px;
   font-weight: 500;
   color: var(--gold);
@@ -113,7 +113,7 @@ nav {
   margin: 0 0 27px;
 }
 .tiny-star {
-  font-size: 16px;
+  font-size: clamp(20px, 1.6vw, 30px);
   margin-right: 10px;
 }
 h1,
@@ -130,7 +130,7 @@ h3 {
   letter-spacing: -2px;
 }
 h1 {
-  font-size: clamp(48px, 5.1vw, 84px);
+  font-size: clamp(58px, 5.61vw, 101px);
   line-height: 1.1;
   margin-bottom: 26px;
 }
@@ -142,7 +142,7 @@ p {
   line-height: 1.8;
 }
 .lead {
-  font-size: 16px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: #b5bfb1;
   line-height: 1.8;
   margin-bottom: 30px;
@@ -155,7 +155,7 @@ p {
   background: var(--gold);
   color: #17221a;
   padding: 19px 23px;
-  font-size: 12px;
+  font-size: clamp(20px, 1.6vw, 30px);
   border: 1px solid var(--gold);
   transition:
     background 0.3s,
@@ -166,10 +166,10 @@ p {
   transform: translateY(-2px);
 }
 .button span {
-  font-size: 20px;
+  font-size: 25px;
 }
 .hero-note {
-  font-size: 10px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: var(--muted);
   margin: 19px 0 0;
 }
@@ -187,7 +187,7 @@ p {
   display: flex;
   justify-content: space-between;
   margin: 10px 10%;
-  font-size: 9px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: var(--muted);
 }
 .scene-caption span:first-child {
@@ -214,7 +214,7 @@ p {
   justify-content: space-between;
   border-top: 1px solid #aeb49724;
   padding-top: 23px;
-  font-size: 9px;
+  font-size: clamp(20px, 1.6vw, 30px);
   letter-spacing: 1.4px;
   color: #a5b19e;
 }
@@ -228,7 +228,7 @@ p {
   scroll-margin-top: 0;
 }
 h2 {
-  font-size: clamp(40px, 4.6vw, 65px);
+  font-size: clamp(48px, 5.06vw, 78px);
   line-height: 1.14;
   margin-bottom: 28px;
 }
@@ -242,17 +242,17 @@ h2 {
   padding-top: 12px;
 }
 .perspective-text p {
-  font-size: 14px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: #b2bdaf;
 }
 .perspective-text .big-copy {
   font-family: var(--serif);
-  font-size: 26px;
+  font-size: 33px;
   color: #e0e4d5;
   line-height: 1.5;
 }
 .text-link {
-  font-size: 11px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: var(--gold);
   border-bottom: 1px solid #ceb78744;
   padding-bottom: 5px;
@@ -271,19 +271,19 @@ h2 {
 }
 .principle-number {
   color: var(--gold);
-  font-size: 11px;
+  font-size: clamp(20px, 1.6vw, 30px);
 }
 .principle h3 {
-  font-size: 29px;
+  font-size: 36px;
   letter-spacing: -0.5px;
   margin: 22px 0 16px;
 }
 .principle p {
-  font-size: 13px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: #b2bdaf;
 }
 .small-note {
-  font-size: 10px;
+  font-size: clamp(20px, 1.6vw, 30px);
   line-height: 1.8;
   color: #9eab9b;
 }
@@ -299,7 +299,7 @@ h2 {
   gap: 30px;
 }
 .section-heading > p {
-  font-size: 13px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: var(--muted);
   margin-bottom: 35px;
 }
@@ -321,12 +321,12 @@ h2 {
 }
 label,
 .saved > span {
-  font-size: 11px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: #c0c8b8;
 }
 .range-heading output {
   font-family: Georgia, serif;
-  font-size: 24px;
+  font-size: 30px;
   color: var(--gold);
 }
 input[type="range"] {
@@ -361,7 +361,7 @@ input[type="range"]::-moz-range-thumb {
 .range-limits {
   display: flex;
   justify-content: space-between;
-  font-size: 9px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: var(--muted);
   margin-top: 13px;
 }
@@ -384,7 +384,7 @@ input[type="range"]::-moz-range-thumb {
   width: 100%;
   min-width: 0;
   font-family: Georgia, serif;
-  font-size: 25px;
+  font-size: 31px;
   background: transparent;
   border: 0;
   border-bottom: 1px solid #a1ad8840;
@@ -398,7 +398,7 @@ input[type="range"]::-moz-range-thumb {
 }
 .saved strong {
   font-family: Georgia, serif;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 400;
   color: var(--gold);
 }
@@ -415,7 +415,7 @@ input[type="range"]::-moz-range-thumb {
   color: #8e9d8c;
   padding: 20px 10px;
   font-family: var(--serif);
-  font-size: 23px;
+  font-size: 29px;
   text-align: left;
   display: flex;
   align-items: center;
@@ -427,7 +427,7 @@ input[type="range"]::-moz-range-thumb {
 }
 .choice-tabs button span:last-child {
   margin-left: auto;
-  font-size: 17px;
+  font-size: 21px;
 }
 .choice-tabs button.active {
   color: var(--gold);
@@ -445,17 +445,17 @@ input[type="range"]::-moz-range-thumb {
   min-width: 0;
 }
 .alternative-copy h3 {
-  font-size: 43px;
+  font-size: 54px;
   letter-spacing: -1px;
   line-height: 1.2;
   margin-bottom: 24px;
 }
 .alternative-copy > p {
-  font-size: 13px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: #b2bdaf;
 }
 .alternative-copy > .eyebrow {
-  font-size: 10px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: var(--gold);
 }
 .result {
@@ -467,23 +467,23 @@ input[type="range"]::-moz-range-thumb {
 }
 .result strong {
   font-family: Georgia, serif;
-  font-size: 60px;
+  font-size: 75px;
   color: var(--gold);
   font-weight: 400;
   letter-spacing: -2px;
 }
 .result span {
-  font-size: 12px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: #c3cbb8;
 }
 .alternative-copy .assumption,
 .alternative-copy .small-note {
-  font-size: 10px;
+  font-size: clamp(20px, 1.6vw, 30px);
   margin: 18px 0 0;
   color: #9eab9b;
 }
 .alternative-copy .remainder {
-  font-size: 11px;
+  font-size: clamp(20px, 1.6vw, 30px);
 }
 .allocation {
   display: grid;
@@ -503,7 +503,7 @@ input[type="range"]::-moz-range-thumb {
 }
 .art-note {
   text-align: center;
-  font-size: 9px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: #99ac96;
   letter-spacing: 1px;
   margin-top: 17px;
@@ -529,7 +529,7 @@ input[type="range"]::-moz-range-thumb {
   align-items: center;
 }
 .plan-label {
-  font-size: 9px;
+  font-size: clamp(20px, 1.6vw, 30px);
   letter-spacing: 1.5px;
   color: var(--gold);
   margin-bottom: 32px;
@@ -541,7 +541,7 @@ input[type="range"]::-moz-range-thumb {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  font-size: 12px;
+  font-size: clamp(20px, 1.6vw, 30px);
   margin-bottom: 15px;
 }
 .plan-row strong {
@@ -569,17 +569,17 @@ input[type="range"]::-moz-range-thumb {
 }
 .ending-star {
   display: block;
-  font-size: 42px;
+  font-size: 53px;
   color: var(--gold);
   margin-bottom: 35px;
 }
 .ending p:not(.eyebrow) {
-  font-size: 14px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: var(--muted);
   margin-bottom: 32px;
 }
 .ending h2 {
-  font-size: clamp(39px, 5vw, 72px);
+  font-size: clamp(47px, 5.5vw, 86px);
 }
 footer {
   margin: 0 5%;
@@ -591,7 +591,7 @@ footer {
 }
 footer p,
 footer > a:last-child {
-  font-size: 10px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: var(--muted);
   margin: 0;
 }
@@ -695,7 +695,7 @@ footer > a:last-child {
     min-height: 640px;
   }
   h1 {
-    font-size: 52px;
+    font-size: 65px;
   }
   .brand span {
     display: none;
@@ -726,10 +726,10 @@ footer > a:last-child {
     padding: 85px 6%;
   }
   .alternative-copy h3 {
-    font-size: 35px;
+    font-size: 44px;
   }
   .result strong {
-    font-size: 50px;
+    font-size: 63px;
   }
   .perspective {
     gap: 30px;
@@ -743,13 +743,13 @@ footer > a:last-child {
     height: 75px;
   }
   .brand {
-    font-size: 26px;
+    font-size: 33px;
   }
   nav > a {
     display: none;
   }
   .motion-toggle {
-    font-size: 10px;
+    font-size: clamp(20px, 1.6vw, 30px);
   }
   .hero {
     height: auto;
@@ -761,15 +761,15 @@ footer > a:last-child {
     gap: 30px;
   }
   .hero h1 {
-    font-size: clamp(40px, 8.8vw, 61px);
+    font-size: clamp(48px, 9.680000000000001vw, 73px);
   }
   .eyebrow {
-    font-size: 8px;
+    font-size: clamp(20px, 1.6vw, 30px);
     letter-spacing: 1.5px;
     margin-bottom: 22px;
   }
   .hero .lead {
-    font-size: 15px;
+    font-size: clamp(20px, 1.6vw, 30px);
   }
   .hero-art {
     width: 100%;
@@ -781,19 +781,19 @@ footer > a:last-child {
   }
   .hero-bottom {
     bottom: 23px;
-    font-size: 8px;
+    font-size: clamp(20px, 1.6vw, 30px);
   }
   .hero-bottom > span:first-child {
     display: none;
   }
   .scene-caption {
-    font-size: 8px;
+    font-size: clamp(20px, 1.6vw, 30px);
   }
   .section-wrap {
     padding: 65px 6%;
   }
   h2 {
-    font-size: 43px;
+    font-size: 54px;
   }
   .perspective {
     grid-template-columns: 1fr;
@@ -817,7 +817,7 @@ footer > a:last-child {
     display: block;
   }
   .section-heading > p {
-    font-size: 12px;
+    font-size: clamp(20px, 1.6vw, 30px);
   }
   .budget-panel {
     grid-template-columns: 1fr 1fr;
@@ -839,16 +839,16 @@ footer > a:last-child {
     padding-left: 15px;
   }
   .saved strong {
-    font-size: 27px;
+    font-size: 34px;
   }
   .currency-input input {
-    font-size: 23px;
+    font-size: 29px;
   }
   .choice-tabs {
     margin-top: 20px;
   }
   .choice-tabs button {
-    font-size: 17px;
+    font-size: 21px;
     gap: 6px;
     padding: 18px 4px;
   }
@@ -869,23 +869,23 @@ footer > a:last-child {
     padding-bottom: 10px;
   }
   .alternative-copy h3 {
-    font-size: 37px;
+    font-size: 46px;
   }
   .alternative-copy > p {
-    font-size: 14px;
+    font-size: clamp(20px, 1.6vw, 30px);
   }
   .result strong {
-    font-size: 60px;
+    font-size: 75px;
   }
   .split-section {
     grid-template-columns: 1fr;
     gap: 25px;
   }
   .ending h2 {
-    font-size: 40px;
+    font-size: 50px;
   }
   .ending p:not(.eyebrow) {
-    font-size: 12px;
+    font-size: clamp(20px, 1.6vw, 30px);
   }
   .ending-star {
     margin-bottom: 25px;
@@ -898,14 +898,14 @@ footer > a:last-child {
   }
   .button {
     padding: 17px;
-    font-size: 11px;
+    font-size: clamp(20px, 1.6vw, 30px);
     gap: 17px;
   }
   .allocation {
     gap: 4px;
   }
   .meal-control label {
-    font-size: 10px;
+    font-size: clamp(20px, 1.6vw, 30px);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -933,7 +933,7 @@ footer > a:last-child {
   display: flex;
   justify-content: space-between;
   gap: 16px;
-  font-size: 11px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: #c1cab8;
   margin-bottom: 12px;
 }
@@ -960,7 +960,7 @@ footer > a:last-child {
   display: flex;
   justify-content: flex-end;
   gap: 22px;
-  font-size: 9px;
+  font-size: clamp(20px, 1.6vw, 30px);
   color: var(--muted);
 }
 .tradeoff-key span {
@@ -978,7 +978,7 @@ footer > a:last-child {
 }
 @media (max-width: 700px) {
   .tradeoff-label {
-    font-size: 9px;
+    font-size: clamp(20px, 1.6vw, 30px);
   }
   .tradeoff-key {
     justify-content: flex-start;
@@ -997,4 +997,331 @@ footer > a:last-child {
 }
 .skip-link:focus {
   transform: translateY(0);
+}
+
+/* Comfortable reading at a distance, with layouts that allow the larger type. */
+.hero {
+  min-height: 850px;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 35px;
+}
+header {
+  min-height: 120px;
+  height: auto;
+  padding: 26px 0;
+  gap: 28px;
+}
+nav {
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 24px;
+}
+.brand {
+  white-space: nowrap;
+}
+.brand span {
+  display: none;
+}
+.eyebrow {
+  letter-spacing: 1.5px;
+}
+.button {
+  padding: 24px 30px;
+}
+.hero-bottom {
+  align-items: center;
+  gap: 25px;
+}
+.scene-caption {
+  gap: 24px;
+  align-items: flex-start;
+}
+.section-heading {
+  align-items: flex-start;
+}
+.section-heading > p {
+  max-width: 32ch;
+}
+.range-heading {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.budget-panel {
+  grid-template-columns: 1.2fr 1fr 1fr;
+}
+.saved strong {
+  font-size: clamp(40px, 3vw, 58px);
+}
+.currency-input input {
+  font-size: clamp(32px, 2.4vw, 48px);
+}
+.range-heading output {
+  font-size: clamp(36px, 2.8vw, 54px);
+}
+.simple-control label {
+  min-height: 2.8em;
+}
+input[type="range"] {
+  height: 7px;
+  margin: 15px 0;
+}
+input[type="range"]::-webkit-slider-thumb {
+  width: 28px;
+  height: 28px;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+}
+.result {
+  align-items: center;
+}
+.meal-control {
+  flex-wrap: wrap;
+}
+.meal-control input {
+  width: 110px;
+  font-size: 28px;
+}
+.tradeoff-label {
+  align-items: flex-start;
+  gap: 30px;
+}
+.tradeoff-track {
+  height: 20px;
+}
+.tradeoff-key {
+  flex-wrap: wrap;
+}
+.tradeoff-key i {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.allocation span {
+  height: 9px;
+}
+.faith-reflections {
+  grid-column: 1 / -1;
+  margin-top: 60px;
+}
+.faith-point {
+  display: grid;
+  grid-template-columns: 0.9fr 1.5fr;
+  gap: 60px;
+  padding: 60px 0;
+  border-top: 1px solid #ceb78750;
+}
+.faith-point h3 {
+  font-size: clamp(36px, 3vw, 58px);
+  line-height: 1.25;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+.faith-body p {
+  font-size: clamp(24px, 1.7vw, 34px);
+  color: #c5cebf;
+  line-height: 1.65;
+  max-width: 65ch;
+  margin-bottom: 28px;
+}
+.faith-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 28px;
+}
+.text-link {
+  line-height: 1.6;
+}
+.alternative {
+  gap: 50px;
+  padding-top: 50px;
+}
+.plan-label {
+  line-height: 1.6;
+}
+.plan-track {
+  height: 12px;
+}
+.ending p {
+  line-height: 1.7;
+}
+@media (min-width: 1600px) {
+  header,
+  .hero,
+  footer {
+    max-width: 1800px;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .hero {
+    margin: 0;
+    padding-left: 5%;
+    padding-right: 5%;
+    max-width: none;
+  }
+  .section-wrap {
+    padding-left: 7%;
+    padding-right: 7%;
+  }
+}
+@media (max-width: 1100px) {
+  header {
+    flex-wrap: wrap;
+  }
+  .budget-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+  .budget-control {
+    grid-column: 1/-1;
+  }
+  .simple-control {
+    border: 0;
+    padding-left: 0;
+  }
+  .faith-point {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .hero-bottom > span:first-child {
+    display: none;
+  }
+  .perspective {
+    grid-template-columns: 1fr;
+  }
+  .section-heading {
+    flex-direction: column;
+    gap: 0;
+  }
+  .section-heading > p {
+    max-width: none;
+  }
+  .alternative {
+    grid-template-columns: 1fr;
+  }
+  .alternative-art {
+    max-width: 720px;
+    width: 100%;
+    margin: auto;
+  }
+  .split-section {
+    grid-template-columns: 1fr;
+  }
+  .choice-tabs button {
+    font-size: 28px;
+  }
+  .choice-tabs button span:last-child {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    min-height: 0;
+    gap: 30px;
+  }
+  header {
+    min-height: 100px;
+    padding: 22px 0;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+  nav {
+    gap: 0;
+  }
+  .motion-toggle {
+    padding: 12px;
+    font-size: 18px;
+  }
+  .brand {
+    font-size: 34px;
+  }
+  .hero h1 {
+    font-size: clamp(46px, 10vw, 68px);
+  }
+  .button {
+    padding: 20px;
+  }
+  .hero-bottom {
+    font-size: 18px;
+    gap: 10px;
+  }
+  .hero-bottom span:last-child {
+    white-space: nowrap;
+  }
+  .scene-caption {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .scene-caption span {
+    font-size: 18px;
+  }
+  .faith-point {
+    padding: 40px 0;
+  }
+  .faith-body p {
+    font-size: 22px;
+  }
+  .faith-point h3 {
+    font-size: 36px;
+    overflow-wrap: anywhere;
+  }
+  .budget-panel {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .budget-control {
+    grid-column: auto;
+  }
+  .simple-control,
+  .saved {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .simple-control label {
+    min-height: 0;
+  }
+  .range-heading {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .choice-tabs {
+    grid-template-columns: 1fr;
+    border: 0;
+  }
+  .choice-tabs button {
+    padding: 20px 0;
+    border-bottom: 1px solid #aeb49740;
+    gap: 14px;
+    font-size: 30px;
+  }
+  .choice-tabs button.active {
+    border-bottom-width: 3px;
+  }
+  .tradeoff-label {
+    flex-direction: column;
+    gap: 6px;
+  }
+  .tradeoff-key {
+    gap: 15px;
+  }
+  .allocation {
+    grid-template-columns: repeat(10, 1fr);
+  }
+  .art-note {
+    letter-spacing: 0;
+  }
+  .alternative-copy h3 {
+    font-size: 43px;
+  }
+  .meal-control label {
+    font-size: 20px;
+  }
+  .plan-row > div:first-child {
+    flex-wrap: wrap;
+  }
+  footer {
+    flex-wrap: wrap;
+  }
 }
