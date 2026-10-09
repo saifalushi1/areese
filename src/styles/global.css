@@ -1325,104 +1325,6 @@ input[type="range"]::-moz-range-thumb {
     flex-wrap: wrap;
   }
 }
-/* Coin boards make the cost of one evening tangible. */
-.cost-comparison {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin: 45px 0;
-}
-.coin-card {
-  padding: 36px;
-  min-width: 0;
-  border: 1px solid #ceb78740;
-  background: #18231b;
-}
-.coin-card-future {
-  background: #1b2a20;
-  border-color: #8eae7055;
-}
-.coin-card h3 {
-  font-size: clamp(36px, 3vw, 58px);
-  letter-spacing: -1px;
-  margin-bottom: 28px;
-}
-.coin-board {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 12px;
-  margin: 30px 0;
-}
-.coin {
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border: 2px solid #bda272;
-  background: radial-gradient(circle at 35% 30%, #deca91, #927540);
-  position: relative;
-  animation: coin-arrive 0.65s ease-out both;
-}
-.coin::after {
-  content: "";
-  position: absolute;
-  inset: 16%;
-  border: 1px solid #f3ddb066;
-  border-radius: 50%;
-}
-.coin-spent {
-  background: #252c24;
-  border-color: #696650;
-}
-.coin-spent::after {
-  border-color: #aba17a44;
-}
-.coin-future {
-  background: radial-gradient(circle at 35% 30%, #9dbb80, #4f7051);
-  border-color: #b7cba0;
-}
-.coin-total {
-  color: var(--gold);
-  font:
-    clamp(36px, 3vw, 58px) Georgia,
-    serif;
-  line-height: 1.3;
-  margin-bottom: 18px;
-}
-.coin-total span {
-  display: block;
-  font:
-    clamp(20px, 1.6vw, 30px) Arial,
-    sans-serif;
-  color: #c5cebf;
-  margin-top: 12px;
-}
-.coin-key {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  font-size: clamp(20px, 1.6vw, 30px);
-  line-height: 1.5;
-}
-.coin-key span {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-.coin-key i {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--gold);
-  flex-shrink: 0;
-}
-.coin-key span:last-child i {
-  background: #9dbb80;
-}
-.coin-explanation {
-  grid-column: 1/-1;
-  font-size: clamp(20px, 1.6vw, 30px);
-  color: var(--muted);
-  margin: 0;
-}
 .choice-tabs {
   grid-template-columns: repeat(4, 1fr);
 }
@@ -1476,5 +1378,56 @@ input[type="range"]::-moz-range-thumb {
   }
   .coin-explanation {
     font-size: 20px;
+  }
+}
+
+/* Both celebration costs use one shared horizontal scale. */
+.cost-comparison {
+  display: block;
+  margin: 45px 0;
+}
+.cost-bar-row {
+  margin: 30px 0;
+}
+.cost-bar-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  font-size: clamp(20px, 1.6vw, 30px);
+  margin-bottom: 16px;
+}
+.cost-bar-label strong {
+  color: var(--gold);
+  font-weight: 400;
+  white-space: nowrap;
+}
+.cost-bar-space {
+  width: 100%;
+  height: 36px;
+}
+.cost-bar {
+  height: 100%;
+  border-radius: 2px;
+}
+.cost-bar-wedding {
+  background: var(--gold);
+}
+.cost-bar-walimah {
+  background: #8bab7d;
+}
+.cost-savings {
+  font-size: clamp(20px, 1.6vw, 30px);
+  color: #c5cebf;
+  margin: 24px 0 0;
+}
+.plan-row:nth-child(5) .plan-track > div {
+  background: #a7b796;
+}
+@media (max-width: 700px) {
+  .cost-bar-label {
+    gap: 12px;
+  }
+  .cost-bar-space {
+    height: 28px;
   }
 }

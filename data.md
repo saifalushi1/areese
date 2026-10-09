@@ -32,8 +32,8 @@ These are planning assumptions, not market averages, charity quotes, or financia
 - Overseas trip for two: USD 6,000. Complete trips are rounded down and the remainder is shown.
 - Home savings goal: USD 60,000. The displayed percentage is rounded to the nearest whole percent.
 - Hajj savings goal for two: USD 30,000, an illustrative planning target rather than a package quote. The percentage is rounded to the nearest whole percent, with the remainder or shortfall shown separately. First-year completion depends on the Hajj dates, eligibility, permits, and package availability. Official packages and guidance: https://hajj.nusuk.sa/.
-- The coin comparison uses fifty coins for each scenario, at 2% of the selected budget per coin. Coloured proportions are rounded to the nearest coin; numerical totals remain exact.
+- The cost comparison uses horizontal bars on a shared scale equal to the larger celebration cost. At the defaults, the USD 10,000 walimah bar is 20% of the USD 50,000 wedding bar. If the walimah allowance exceeds the wedding budget, the scale expands to keep both costs proportional.
 - Orphan meals: USD 3 each by default, adjustable between USD 1 and USD 100. Meals are rounded down. Check programme costs and delivery charges with the chosen charity.
 - Each alternative separately uses the entire savings amount. Alternatives are not additive.
-- Combined example: 25% travel, 60% home, 15% giving. Each dollar allocation is rounded down; the remainder stays in savings.
+- Combined example: fund Hajj first, up to USD 30,000, then allocate the remaining savings 25% travel, 60% home, 15% giving. At the defaults, this gives USD 30,000 Hajj, USD 2,500 travel, USD 6,000 home, and USD 1,500 giving. Each dollar allocation is rounded down; the remainder stays in savings.
 - A celebration allowance above the selected budget results in zero savings, with a visible explanation.

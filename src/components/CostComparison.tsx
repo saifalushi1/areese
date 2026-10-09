@@ -14,66 +14,34 @@ export function CostComparison({
   budget: number;
   simple: number;
 }) {
-  const saved = Math.max(0, budget - simple);
-  const spentCoins = Math.round(Math.min(simple / budget, 1) * 50);
+  const scale = Math.max(budget, simple, 1);
   return (
-    <div className="cost-comparison">
-      <motion.article
-        className="coin-card"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <p className="eyebrow">THE BIG WEDDING</p>
-        <h3>One evening.</h3>
-        <div className="coin-board" aria-hidden="true">
-          {Array.from({ length: 50 }, (_, i) => (
-            <span
-              key={i}
-              className="coin coin-spent"
-              style={{ animationDelay: `${i * 15}ms` }}
+    <div
+      className="cost-comparison"
+      aria-label="Celebration costs on the same scale"
+    >
+      {[
+        { name: "The big wedding", cost: budget, kind: "wedding" },
+        { name: "The simple walimah", cost: simple, kind: "walimah" },
+      ].map(({ name, cost, kind }) => (
+        <div className="cost-bar-row" key={kind}>
+          <div className="cost-bar-label">
+            <span>{name}</span>
+            <strong>{money(cost)}</strong>
+          </div>
+          <div className="cost-bar-space">
+            <motion.div
+              className={`cost-bar cost-bar-${kind}`}
+              initial={{ width: 0 }}
+              whileInView={{ width: `${(cost / scale) * 100}%` }}
+              transition={{ duration: 0.8 }}
+              aria-hidden="true"
             />
-          ))}
+          </div>
         </div>
-        <p className="coin-total">
-          {money(budget)} <span>spent on the celebration</span>
-        </p>
-        <p className="small-note">The full budget goes into one day.</p>
-      </motion.article>
-      <motion.article
-        className="coin-card coin-card-future"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-      >
-        <p className="eyebrow">THE SIMPLE WALIMAH</p>
-        <h3>A future together.</h3>
-        <div className="coin-board" aria-hidden="true">
-          {Array.from({ length: 50 }, (_, i) => (
-            <span
-              key={i}
-              className={`coin ${i < spentCoins ? "coin-celebration" : "coin-future"}`}
-              style={{ animationDelay: `${i * 15}ms` }}
-            />
-          ))}
-        </div>
-        <p className="coin-total">
-          {money(saved)} <span>kept for your future</span>
-        </p>
-        <div className="coin-key">
-          <span>
-            <i />
-            {money(Math.min(simple, budget))} celebration
-          </span>
-          <span>
-            <i />
-            {money(saved)} possibilities
-          </span>
-        </div>
-      </motion.article>
-      <p className="coin-explanation">
-        Each coin represents {money(budget / 50)} — 2% of your wedding budget.
-        The colours show rounded proportions; the amounts are exact.
+      ))}
+      <p className="cost-savings">
+        {money(Math.max(0, budget - simple))} left for your future.
       </p>
     </div>
   );

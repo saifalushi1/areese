@@ -51,7 +51,7 @@ const choices = [
     title: "Our first year. A sacred journey.",
     text: "A simple walimah can leave room for something extraordinary: planning to complete Hajj together within our first year of marriage. Imagine beginning our life together with worship, gratitude, and a journey to the Kaaba.",
     unit: 30000,
-    suffix: "of a Hajj fund for two",
+    suffix: "of a $30,000 Hajj fund for two",
     note: "Example goal: $30,000 for two people. This is a planning target, not a package quote. Costs vary by departure country, provider, and year. Completing Hajj in our first year depends on the Hajj dates, eligibility, permits, and package availability.",
   },
 ] as const;
@@ -397,6 +397,14 @@ export default function App() {
     [0, reduced || paused ? 0 : 100],
   );
   const saved = Math.max(0, budget - simple);
+  const hajjFund = Math.min(saved, choices[3].unit);
+  const afterHajj = saved - hajjFund;
+  const plan = [
+    ["Hajj together", hajjFund],
+    ["Travel together", Math.floor(afterHajj * 0.25)],
+    ["Build your home fund", Math.floor(afterHajj * 0.6)],
+    ["Support orphan meals", Math.floor(afterHajj * 0.15)],
+  ] as const;
   const choice = choices[selected];
   const result =
     selected === 1 || selected === 3
@@ -665,7 +673,7 @@ export default function App() {
                     />
                   </div>
                 )}
-                <p className="assumption">{choice.note}</p>
+                {selected !== 3 && <p className="assumption">{choice.note}</p>}
                 {selected === 3 && (
                   <>
                     <p className="remainder">
@@ -683,10 +691,6 @@ export default function App() {
                     </a>
                   </>
                 )}
-                <p className="small-note">
-                  Each option uses the same savings separately. They cannot all
-                  be funded in full at once.
-                </p>
               </div>
             </div>
           </section>
@@ -706,20 +710,18 @@ export default function App() {
               <p className="plan-label">
                 ONE POSSIBLE PLAN FOR YOUR {money(saved)}
               </p>
-              {[
-                ["Travel together", 0.25],
-                ["Build your home fund", 0.6],
-                ["Support orphan meals", 0.15],
-              ].map(([label, share]) => (
+              {plan.map(([label, amount]) => (
                 <div className="plan-row" key={label}>
                   <div>
                     <span>{label}</span>
-                    <strong>{money(Math.floor(saved * Number(share)))}</strong>
+                    <strong>{money(amount)}</strong>
                   </div>
                   <div className="plan-track">
                     <motion.div
                       initial={{ width: 0 }}
-                      whileInView={{ width: `${Number(share) * 100}%` }}
+                      whileInView={{
+                        width: `${saved > 0 ? (amount / saved) * 100 : 0}%`,
+                      }}
                       viewport={{ once: true }}
                       transition={{ duration: 1.2 }}
                     />
@@ -727,8 +729,10 @@ export default function App() {
                 </div>
               ))}
               <p className="small-note">
-                Example split: 25% travel · 60% home · 15% giving. Whole-dollar
-                figures are rounded down; any remainder stays in savings.
+                Example plan: put up to $30,000 toward Hajj for two, then split
+                the remaining savings: 25% travel · 60% home · 15% giving.
+                Whole-dollar figures are rounded down; any remainder stays in
+                savings.
               </p>
             </Reveal>
           </section>
