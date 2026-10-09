@@ -1,39 +1,43 @@
-Here is the full 10-point list:
+# A different beginning
 
-Title 10 Islamic & Practical Reasons to Skip the Big Wedding
+The live experience is authored in `src/App.tsx`, with the perspective slideshow in `src/components/FaithPerspective.tsx`. It includes the original overview followed by five faith reflections. Only one slide is displayed at a time, with arrows and direct slide navigation; each has its own animated SVG visual. This file records its editorial basis; the previous full-site slideshow is no longer the entry point.
 
-1. 💸 That Money Could Transform Hundreds of Lives
-A wedding for 200–300 guests in a city like Chicago runs between $43,000 and $52,000. Nationally, the average wedding is projected to cost $36,000 in 2025. Meanwhile, the charity Feed My Starving Children estimates just $106 feeds a child for an entire year. That means a $36,000–$52,000 wedding could instead feed roughly 340–490 children for a full year. With organizations like Food for Orphans, it costs only $11 a month — or $132 a year — to provide daily meals to an orphaned child. That same wedding budget could feed 270–390 orphans for a full year. As Allah says in the Quran: "And give the relative his right, and also the poor and the traveler, and do not spend wastefully. Indeed, the wasteful are brothers of the devils." (Quran 17:26–27)
+## Main argument
 
-2. ✈️ You Could See the World Instead
-For the price of a big wedding, you and your spouse could experience the world together. Backpacking Europe for one month costs between €1,200 and €2,500 — roughly $1,300–$2,700. A full month in Southeast Asia costs as little as $1,000 per person traveling budget-style, with round-trip flights from North America running $600–$1,200. A one-month Asia trip for two, all-in, could cost as little as $3,000–$4,500 — a fraction of a typical wedding, and a far richer foundation for a new marriage than one lavish evening.
+Celebrate marriage with a simple walimah and compare the opportunity cost of a large wedding with travelling together, building a home fund, supporting meals for orphaned children, and planning Hajj together in the first year of marriage.
 
-3. 🕌 The Prophet ﷺ Explicitly Praised Simple Weddings
-The Prophet Muhammad (ﷺ) said: "The most blessed nikah is the one with the least expenses." (Bayhaqi) In another narration recorded in Sunan Abu Dawood (2117), he said: "The best marriage is the one that is most easy and affordable." The Prophet's own daughter Fatima (RA) was married with a dowry consisting of a water bag, a bed, and a few household items — no banquet hall, no designer gown, no floral arrangements. If the greatest of all women had a simple wedding, what does that say about our own extravagance?
+## Religious sources
 
-4. 🚫 Extravagance (Israf) is a Major Sin in Islam
-The Quran states: "…and eat and drink and be not extravagant; surely He does not love the extravagant." (Surah Al-A'raf 7:31). Islamic scholars note that this verse suffices to show the dislike of Allah for extravagant people. In a hadith narrated by Bukhari (no. 2200), the Prophet ﷺ said: "Verily, Allah dislikes for you three things: gossiping, asking too many questions, and wasting wealth." A $36,000–$52,000 celebration for a single evening is, by any measure, an act of israf — and one that Allah has explicitly stated He does not love.
+- A walimah is encouraged: Sahih al-Bukhari 5167, https://sunnah.com/bukhari:5167
+- Avoid wastefulness: Quran 17:26-27, https://quran.com/17/26-27
+- Riba is prohibited: Quran 2:275, https://quran.com/2/275
+- Avoid backbiting: Quran 49:12, https://quran.com/49/12
+- Simplicity in marriage: Abu Dawood 2117, https://sunnah.com/abudawud:2117
+- Fatima’s wedding furnishings (not her mahr): Nasa’i 3384, https://sunnah.com/nasai:3384
+- Extravagance: Quran 7:31, https://quran.com/7/31
+- Wasting wealth: Bukhari 2408 (correcting the supplied 2200 reference), https://sunnah.com/bukhari:2408
+- Sincerity and showing off: Muslim 1905a, https://sunnah.com/muslim:1905a
+- The Bayhaqi blessing narration: https://islamqa.org/hanafi/hadithanswers/120195/ (scholarly assessment; grading is not unanimous).
+- Half-of-religion reports: https://islamqa.info/en/answers/11586/is-marriage-half-of-the-religion (acceptance by al-Albani; scholarly grading differs).
 
-5. 🎵 Most Modern Weddings Are Filled With Haram
-Celebrating a wedding should be done without any haram elements such as alcohol, mixing of genders, haram music, or songs. Many people mistakenly believe music becomes permissible at a wedding, but scholars are clear: music is haram regardless of the occasion, citing Quran 22:30 — "and avoid vain talk" — which hadith literature of the Ahl al-Bayt identifies as referring to music and singing. The reality is that the typical modern wedding — DJ, dancing, free mixing, alcohol — is a minefield of impermissible acts. It may be easier to simply forgo the large celebration altogether.
+The perspective section covers prophetic simplicity, israf, prohibited practices, riya, and the nikah’s importance. Claims that every expensive wedding is necessarily israf, that most weddings contain haram, or that a venue guarantees a measurable amount of barakah are not presented as established facts.
 
-6. 👥 Free Mixing of Genders Leads to Fitnah
-According to Islamic teachings, participation in weddings that involve mixing of males and females or haram elements like music is not permissible unless you can actively change these practices. The Prophet ﷺ warned: "Whenever a man is alone with a woman, Shaytan is the third of them." (Tirmidhi) Large weddings inevitably create uncontrolled environments where unrelated men and women mingle freely — an environment the Prophet ﷺ consistently warned against. A simple nikah ceremony avoids this problem entirely.
+The wedding-practices paragraph uses the user's requested restrictive religious perspective on instrumental music, alongside backbiting, extravagance, and riya. The previous music-ruling links and general advisory have been removed from the experience.
 
-7. 🤲 Riya (Showing Off) Nullifies the Barakah
-The Prophet ﷺ said: "The first of people against whom judgment will be pronounced on the Day of Resurrection will be a man who died as a martyr... [and it will be said to him] 'You did not do it except to be called courageous.' And so it will be said, and he will be dragged on his face into the Fire." (Muslim 1905). If showing off can corrupt even martyrdom, it can certainly corrupt a wedding. Many brides and grooms justify extravagance with the phrase "you're only a bride once," while ignoring the long-term repercussions of a dented pocket and, more importantly, a wedding rooted in showing off rather than worship. A nikah performed with sincerity in a masjid carries infinitely more barakah than a performance staged for guests' Instagram feeds.
+## Illustrative numbers
 
-8. 💳 Many Muslims Start Married Life in Debt
-Some couples actually go out of their way to get a loan for their wedding ceremony, at which point they begin their lives together paying off a loan. Islam explicitly prohibits riba (interest-based debt), and yet families routinely take on credit card debt or personal loans to fund weddings — beginning a sacred covenant with a financial sin. The Prophet ﷺ said: "Whoever dies free of three things — arrogance, cheating, and debt — will enter Paradise." (Tirmidhi 1572). Starting a marriage in debt is both financially reckless and spiritually dangerous.
+These are planning assumptions, not market averages, charity quotes, or financial forecasts.
 
-9. 🌍 Wealth is an Amanah (Trust) from Allah — Spend it Wisely
-Allah says in the Quran: "And do not give the foolish your wealth, which Allah has made a means of sustenance for you." (Quran 4:5). Wealth is not ours — it is entrusted to us by Allah, and we will be asked about every penny of it on the Day of Judgment. The Prophet ﷺ said: "The son of Adam will not pass away from Allah until he is asked about five things: how he lived his life, how he utilized his youth, with what means did he earn his wealth, how did he spend his wealth, and what did he do with his knowledge." (Tirmidhi 2416). Spending tens of thousands on flowers, a venue, and a cake is a very difficult thing to justify before Allah.
-
-10. 📿 The Nikah Itself is the Ibadah — Not the Party
-A wedding is actually a very simple process, and Islam is about simplicity and the middle path — we risk misunderstanding the importance of marriage if it's defined by the grandness of the weddings and parties. The nikah contract itself — witnessed, with a mahr, and performed with the intention of pleasing Allah — is a complete act of worship. As the Prophet ﷺ said: "When a servant of Allah marries, he has completed half of his religion, so let him fear Allah regarding the other half." (Kanz al-Ummal, Hadith 44403). The deen is completed in the contract, not the catering.
-
-11. Thank you for reading!
-اللَّهُمَّ إِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ خَيْرٌ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي فَاقْدُرْهُ لِي وَيَسِّرْهُ لِي ثُمَّ بَارِكْ لِي فِيهِ، وَإِنْ كُنْتَ تَعْلَمُ أَنَّ هَذَا الْأَمْرَ شَرٌّ لِي فِي دِينِي وَمَعَاشِي وَعَاقِبَةِ أَمْرِي فَاصْرِفْهُ عَنِّي وَاصْرِفْنِي عَنْهُ وَاقْدُرْ لِي الْخَيْرَ حَيْثُ كَانَ ثُمَّ أَرْضِنِي بِهِ
-
-"O Allah, if You know this matter is good for me in my religion, my livelihood, and my affairs — then decree it for me, make it easy for me, and bless it for me. And if You know this matter is bad for me in my religion, my livelihood, and my affairs — then turn it away from me and turn me away from it, and decree for me what is good wherever it may be, and make me pleased with it."
-(Sahih al-Bukhari 1166)
+- Starting wedding budget: USD 50,000; simple celebration: USD 10,000; savings: USD 40,000.
+- Overseas trip for two: USD 6,000. Complete trips are rounded down and the remainder is shown.
+- Home savings goal: USD 60,000, illustrated as a 20% down payment on an example USD 300,000 home. The displayed percentage is rounded to the nearest whole percent. The farm-and-horses visual represents the aspiration, not a property advertised at that price.
+- Hajj savings goal for two: USD 30,000, an illustrative planning target rather than a package quote. The percentage is rounded to the nearest whole percent, with the remainder or shortfall shown separately. First-year completion depends on the Hajj dates, eligibility, permits, and package availability. Official packages and guidance: https://hajj.nusuk.sa/.
+- The cost comparison uses horizontal bars on a shared scale equal to the larger celebration cost. At the defaults, the USD 10,000 walimah bar is 20% of the USD 50,000 wedding bar. If the walimah allowance exceeds the wedding budget, the scale expands to keep both costs proportional.
+- Orphan meals: USD 3 each by default, adjustable between USD 1 and USD 100. Meals are rounded down. Check programme costs and delivery charges with the chosen charity.
+- Each alternative separately uses the entire savings amount. Alternatives are not additive.
+- Hajj-first plan: fund Hajj up to USD 30,000, then allocate the remainder 25% travel, 60% home, 15% giving. At the defaults: USD 30,000 Hajj, USD 2,500 travel, USD 6,000 home, USD 1,500 giving.
+- Home-first plan: 60% home, 20% Hajj, 10% travel, 10% giving. At the defaults: USD 24,000 home, USD 8,000 Hajj, USD 4,000 travel, USD 4,000 giving.
+- Travel-first plan: 50% travel, 30% home, 15% Hajj, 5% giving. At the defaults: USD 20,000 travel, USD 12,000 home, USD 6,000 Hajj, USD 2,000 giving.
+- Giving-first plan: 50% giving, 25% home, 15% Hajj, 10% travel. At the defaults: USD 20,000 giving, USD 10,000 home, USD 6,000 Hajj, USD 4,000 travel.
+- Each plan’s whole-dollar allocations are rounded down; any remainder stays in savings.
+- A celebration allowance above the selected budget results in zero savings, with a visible explanation.
