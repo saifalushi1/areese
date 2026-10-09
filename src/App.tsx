@@ -1,6 +1,7 @@
 import { FaithPerspective } from "./components/FaithPerspective";
 import { CostComparison } from "./components/CostComparison";
 import { FarmScene } from "./components/FarmScene";
+import { GazaAidScene } from "./components/GazaAidScene";
 import { useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import {
@@ -70,7 +71,7 @@ function Scene({ kind }: { kind: Kind }) {
           wedding: "An illuminated wedding arch and banquet tables",
           travel: "A plane crossing mountains under a golden moon",
           home: "A farm with a barn, fenced pasture, and two animated horses",
-          give: "Bowls of food underneath an olive tree",
+          give: "Food and aid boxes being transported by truck toward Gaza",
           hajj: "The Kaaba with its gold band, surrounded by a softly moving courtyard of pilgrims",
         }[kind]
       }
@@ -192,59 +193,7 @@ function Scene({ kind }: { kind: Kind }) {
         </g>
       )}
       {kind === "home" && <FarmScene />}
-      {kind === "give" && (
-        <g>
-          <path
-            d="M400 357V179M400 271L327 208M400 237L472 173M400 303L476 247M400 213L369 153"
-            stroke="#bba578"
-            strokeWidth="8"
-          />
-          <g className="leaves" fill="#75936a">
-            {[
-              [327, 198],
-              [366, 147],
-              [410, 159],
-              [470, 166],
-              [480, 236],
-              [317, 260],
-              [420, 286],
-            ].map(([x, y], i) => (
-              <ellipse
-                key={i}
-                cx={x}
-                cy={y}
-                rx="39"
-                ry="20"
-                transform={`rotate(${i % 2 ? -35 : 35} ${x} ${y})`}
-              />
-            ))}
-          </g>
-          {[200, 400, 600].map((x, i) => (
-            <g
-              className="bowl"
-              key={x}
-              style={{ animationDelay: `${i * 0.2}s` }}
-            >
-              <ellipse cx={x} cy="384" rx="75" ry="21" fill="#ad9466" />
-              <path
-                d={`M${x - 75} 384Q${x - 65} 458 ${x} 458Q${x + 65} 458 ${x + 75} 384`}
-                fill="#233c32"
-                stroke="#a8b98a"
-              />
-              {Array.from({ length: 9 }, (_, j) => (
-                <circle
-                  key={j}
-                  cx={x - 45 + j * 11}
-                  cy={380 - (j % 3) * 5}
-                  r="7"
-                  fill={j % 2 ? "#d9c390" : "#8b9b65"}
-                />
-              ))}
-            </g>
-          ))}
-          <path d="M130 474H670" stroke="#c6ad7b" opacity=".3" />
-        </g>
-      )}
+      {kind === "give" && <GazaAidScene />}
       {kind === "hajj" && (
         <g>
           <ellipse
@@ -742,7 +691,8 @@ export default function App() {
               <p>
                 Gather your people. Share a meal. Honour your commitments.
                 <br />
-                Then save something for all the days that follow.
+                Save something for all the days that follow. And begin your
+                marriage with barakah
               </p>
               <a className="button" href="#possibilities">
                 Explore your own numbers <span>↑</span>

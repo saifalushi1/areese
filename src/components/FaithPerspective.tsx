@@ -166,11 +166,36 @@ function TopicVisual({ index }: { index: number }) {
             <path d="M155 72H245M150 133H250M157 160H243" opacity=".5" />
             <g className="faith-coin">
               <circle cx="200" cy="38" r="17" fill="#bda171" />
-              <path d="M194 38H206M200 31V45" stroke="#263829" />
+              <text
+                x="200"
+                y="39"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fontFamily="Arial, sans-serif"
+                fontSize="24"
+                fill="#263829"
+                stroke="none"
+              >
+                $
+              </text>
             </g>
-            <circle cx="166" cy="187" r="13" />
-            <circle cx="198" cy="187" r="13" />
-            <circle cx="230" cy="187" r="13" />
+            {[166, 198, 230].map((x) => (
+              <g key={x}>
+                <circle cx={x} cy="187" r="13" />
+                <text
+                  x={x}
+                  y="188"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fontFamily="Arial, sans-serif"
+                  fontSize="19"
+                  fill="#ceb787"
+                  stroke="none"
+                >
+                  $
+                </text>
+              </g>
+            ))}
           </g>
         )}
         {index === 3 && (

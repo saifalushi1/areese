@@ -1709,3 +1709,14 @@ input[type="range"]::-moz-range-thumb {
     transform: rotate(-12deg);
   }
 }
+.aid-truck {
+  animation: aid-delivery 6s ease-in-out infinite;
+}
+.aid-route {
+  animation: dash 20s linear infinite;
+}
+@keyframes aid-delivery {
+  50% {
+    transform: translateX(16px);
+  }
+}
