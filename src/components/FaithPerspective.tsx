@@ -1,6 +1,20 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 
 const reflections = [
+  {
+    title: "Marriage is worth celebrating. Waste is worth questioning.",
+    paragraphs: [
+      "A wedding is not automatically haram. The Prophet ﷺ encouraged a walimah — a wedding meal. The concern is what we bring into it: waste, interest-based borrowing, alcohol, or pressure to impress.",
+      "A big bill doesn’t make a marriage better. A modest celebration can honour your faith, bring people together, and leave room for the life you actually want.",
+    ],
+    links: [
+      [
+        "Read about the walimah · Bukhari 5167",
+        "https://sunnah.com/bukhari:5167",
+      ],
+    ],
+  },
   {
     title: "The Prophet ﷺ Explicitly Praised Simple Weddings",
     paragraphs: [
@@ -64,39 +78,267 @@ const reflections = [
   },
 ];
 
-export function FaithPerspective() {
+function TopicVisual({ index }: { index: number }) {
+  const labels = [
+    "A softly illuminated wedding arch",
+    "A simple shared meal with a flickering candle",
+    "Coins falling into a savings jar",
+    "A shield protecting a celebration",
+    "A sincere heart beyond the spotlight",
+    "A marriage contract with two wedding rings",
+  ];
   return (
-    <div className="faith-reflections">
-      {reflections.map(({ title, paragraphs, links }) => (
-        <motion.article
-          className="faith-point"
-          key={title}
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.7 }}
-        >
-          <h3>{title}</h3>
-          <div className="faith-body">
-            {paragraphs.map((text) => (
-              <p key={text}>{text}</p>
-            ))}
-            <div className="faith-sources">
-              {links.map(([label, url]) => (
-                <a
-                  className="text-link"
-                  href={url}
-                  target="_blank"
-                  rel="noreferrer"
-                  key={url}
-                >
-                  {label} ↗
-                </a>
-              ))}
+    <svg
+      className="faith-visual"
+      viewBox="0 0 400 240"
+      fill="none"
+      role="img"
+      aria-label={labels[index]}
+    >
+      <ellipse
+        cx="200"
+        cy="212"
+        rx="125"
+        ry="10"
+        fill="#ceb787"
+        opacity=".08"
+      />
+      <g
+        stroke="#ceb787"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        {index === 0 && (
+          <g>
+            <path
+              className="faith-draw"
+              d="M110 211V112C110 12 290 12 290 112V211M127 211V113C127 35 273 35 273 113V211"
+            />
+            <path d="M128 117Q200 153 272 117" opacity=".5" />
+            <g className="faith-float" fill="#8eaa79" stroke="none">
+              <ellipse
+                cx="112"
+                cy="95"
+                rx="12"
+                ry="6"
+                transform="rotate(-30 112 95)"
+              />
+              <ellipse
+                cx="283"
+                cy="91"
+                rx="12"
+                ry="6"
+                transform="rotate(30 283 91)"
+              />
+            </g>
+            <path d="M200 69V99M181 88H219" />
+            <circle className="flame" cx="200" cy="88" r="4" fill="#e1cca0" />
+          </g>
+        )}
+        {index === 1 && (
+          <g>
+            <ellipse cx="200" cy="176" rx="115" ry="30" />
+            <ellipse cx="200" cy="176" rx="80" ry="17" opacity=".4" />
+            <path
+              d="M123 170Q129 129 173 154Q186 174 123 170Z"
+              fill="#8c9b6c"
+            />
+            <path
+              d="M229 159Q256 131 278 165Q267 181 229 159Z"
+              fill="#8c9b6c"
+            />
+            <path d="M195 160V108H208V160M201 106V91" />
+            <ellipse
+              className="flame"
+              cx="201"
+              cy="84"
+              rx="5"
+              ry="9"
+              fill="#e4cf9e"
+            />
+            <path d="M58 131V201M68 131V153H48V131M342 129V201M335 130Q319 154 342 159" />
+          </g>
+        )}
+        {index === 2 && (
+          <g>
+            <path d="M145 100V72H255V100L272 117V205H128V117Z" fill="#263829" />
+            <path d="M155 72H245M150 133H250M157 160H243" opacity=".5" />
+            <g className="faith-coin">
+              <circle cx="200" cy="38" r="17" fill="#bda171" />
+              <path d="M194 38H206M200 31V45" stroke="#263829" />
+            </g>
+            <circle cx="166" cy="187" r="13" />
+            <circle cx="198" cy="187" r="13" />
+            <circle cx="230" cy="187" r="13" />
+          </g>
+        )}
+        {index === 3 && (
+          <g>
+            <path
+              className="faith-draw"
+              d="M200 37L279 68V132Q276 185 200 212Q124 185 121 132V68Z"
+              fill="#23382b"
+            />
+            <path
+              d="M166 127L190 152L238 99"
+              stroke="#a8bf8e"
+              strokeWidth="6"
+            />
+            <g className="faith-float" opacity=".65">
+              <path d="M71 73L80 88M322 75L332 62M65 174L80 169M321 172L336 181" />
+            </g>
+          </g>
+        )}
+        {index === 4 && (
+          <g>
+            <path d="M82 47L175 183M318 47L225 183" opacity=".25" />
+            <path
+              className="faith-heart"
+              d="M200 172C126 126 143 76 178 90Q200 99 200 111Q200 99 222 90C257 76 274 126 200 172Z"
+              fill="#65825e"
+            />
+            <path d="M137 212H263" />
+            <g className="faith-float">
+              <path d="M87 89V105M79 97H95M307 124V140M299 132H315" />
+            </g>
+          </g>
+        )}
+        {index === 5 && (
+          <g>
+            <path
+              className="faith-draw"
+              d="M104 47H260L285 73V198H104ZM260 47V73H285"
+              fill="#233329"
+            />
+            <path
+              d="M129 87H227M129 109H246M129 131H224M129 153H193"
+              opacity=".6"
+            />
+            <g className="faith-rings">
+              <circle cx="252" cy="175" r="27" />
+              <circle cx="285" cy="175" r="27" stroke="#9cba85" />
+            </g>
+          </g>
+        )}
+      </g>
+    </svg>
+  );
+}
+
+export function FaithPerspective() {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const reduced = useReducedMotion();
+  const { title, paragraphs, links } = reflections[index];
+  const goTo = (next: number) => {
+    if (next < 0 || next >= reflections.length || next === index) return;
+    setDirection(next > index ? 1 : -1);
+    setIndex(next);
+  };
+  return (
+    <div
+      className="faith-slideshow"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Faith and a simple walimah"
+      onKeyDown={(e) => {
+        if (e.key === "ArrowRight") {
+          e.preventDefault();
+          goTo(index + 1);
+        } else if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          goTo(index - 1);
+        }
+      }}
+    >
+      <div
+        className="faith-stage"
+        id="faith-stage"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        <AnimatePresence initial={false} mode="wait" custom={direction}>
+          <motion.article
+            className="faith-slide"
+            key={index}
+            custom={direction}
+            variants={{
+              enter: (d: number) => ({ opacity: 0, x: reduced ? 0 : d * 32 }),
+              visible: { opacity: 1, x: 0 },
+              exit: (d: number) => ({ opacity: 0, x: reduced ? 0 : -d * 32 }),
+            }}
+            initial="enter"
+            animate="visible"
+            exit="exit"
+            transition={{ duration: 0.3 }}
+            aria-roledescription="slide"
+            aria-label={`${index + 1} of ${reflections.length}`}
+          >
+            <div className="faith-slide-heading">
+              <h3>{title}</h3>
+              <TopicVisual index={index} />
             </div>
+            <div className="faith-body">
+              {paragraphs.map((text) => (
+                <p key={text}>{text}</p>
+              ))}
+              <div className="faith-sources">
+                {links.map(([label, url]) => (
+                  <a
+                    className="text-link"
+                    href={url}
+                    target="_blank"
+                    rel="noreferrer"
+                    key={url}
+                  >
+                    {label} ↗
+                  </a>
+                ))}
+              </div>
+            </div>
+          </motion.article>
+        </AnimatePresence>
+      </div>
+      <div className="faith-controls">
+        <button
+          className="faith-arrow"
+          onClick={() => goTo(index - 1)}
+          disabled={index === 0}
+          aria-label="Previous perspective slide"
+          aria-controls="faith-stage"
+        >
+          ←
+        </button>
+        <div className="faith-position">
+          <span>
+            {index + 1} / {reflections.length}
+          </span>
+          <div
+            className="faith-dots"
+            role="group"
+            aria-label="Choose a perspective slide"
+          >
+            {reflections.map((r, i) => (
+              <button
+                key={r.title}
+                aria-label={`Slide ${i + 1}: ${r.title}`}
+                aria-current={i === index ? "true" : undefined}
+                onClick={() => goTo(i)}
+              />
+            ))}
           </div>
-        </motion.article>
-      ))}
+        </div>
+        <button
+          className="faith-arrow"
+          onClick={() => goTo(index + 1)}
+          disabled={index === reflections.length - 1}
+          aria-label="Next perspective slide"
+          aria-controls="faith-stage"
+        >
+          →
+        </button>
+      </div>
     </div>
   );
 }

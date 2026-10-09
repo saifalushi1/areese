@@ -1,6 +1,6 @@
 # A different beginning
 
-The live experience is authored in `src/App.tsx`, with the five faith reflections in `src/components/FaithPerspective.tsx`. This file records its editorial basis; the previous slideshow is no longer the entry point.
+The live experience is authored in `src/App.tsx`, with the perspective slideshow in `src/components/FaithPerspective.tsx`. It includes the original overview followed by five faith reflections. Only one slide is displayed at a time, with arrows and direct slide navigation; each has its own animated SVG visual. This file records its editorial basis; the previous full-site slideshow is no longer the entry point.
 
 ## Main argument
 

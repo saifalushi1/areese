@@ -22,7 +22,7 @@ The entry point is `src/App.tsx`, with styling in `src/styles/global.css`. React
 
 - Four chapters: perspective, possibilities, a combined plan, and a closing invitation.
 - Larger type throughout for reading across a room: 30–33px body text on a 1920px-wide display, with responsive mobile layouts.
-- Five unnumbered faith reflections: prophetic simplicity, israf, prohibited practices, riya, and the nikah.
+- A compact perspective slideshow: one overview and five faith topics, with previous/next arrows, direct slide dots, and scoped left/right keyboard navigation. Each slide has a small animated illustration. Slides advance only when the user chooses.
 - Wedding, travel, house, meal, and Kaaba illustrations with subtle continuous animation.
 - A USD 50,000 starting wedding budget and USD 10,000 celebration allowance, with horizontal bars proportional to each celebration’s total cost on one shared scale.
 - Separate travel, home-fund, orphan-meal, and Hajj-for-two scenarios; editable meal cost.

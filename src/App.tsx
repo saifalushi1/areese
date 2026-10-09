@@ -484,32 +484,6 @@ export default function App() {
                 <em>Leave the excess.</em>
               </h2>
             </Reveal>
-            <Reveal className="perspective-text">
-              <p className="big-copy">
-                Marriage is worth celebrating.
-                <br />
-                Waste is worth questioning.
-              </p>
-              <p>
-                A wedding is not automatically haram. The Prophet ﷺ encouraged a
-                walimah — a wedding meal. The concern is what we bring into it:
-                waste, interest-based borrowing, alcohol, or pressure to
-                impress.
-              </p>
-              <p>
-                A big bill doesn’t make a marriage better. A modest celebration
-                can honour your faith, bring people together, and leave room for
-                the life you actually want.
-              </p>
-              <a
-                className="text-link"
-                href="https://sunnah.com/bukhari:5167"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Read about the walimah · Bukhari 5167 ↗
-              </a>
-            </Reveal>
             <FaithPerspective />
           </section>
           <section id="possibilities" className="possibilities section-wrap">
