@@ -49,7 +49,7 @@ const choices = [
     text: "An evening of luxury can become many days of meals. Choose a trusted charity supporting orphaned children and let our new beginning help theirs.",
     unit: 3,
     suffix: "meals funded",
-    note: "Example: $3 per meal. This is a planning assumption, not a charity quote. Check our chosen programme’s costs, including delivery.",
+    note: "Example: $3 per meal.",
   },
   {
     name: "Hajj together",
