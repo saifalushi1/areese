@@ -1904,3 +1904,82 @@ input[type="range"]::-moz-range-thumb {
   font-style: italic;
   margin-top: 14px;
 }
+.faith-sources .text-link {
+  font-size: clamp(10px, 0.8vw, 15px);
+}
+.savings-visual {
+  color: var(--gold);
+  margin: 12.42px auto 0;
+  text-align: center;
+}
+.savings-title {
+  font-size: clamp(13.8px, 1.035vw, 19.32px);
+  margin: 0 0 10.35px;
+  font-family: var(--serif);
+}
+.savings-tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6.9px;
+  justify-content: center;
+  align-items: center;
+}
+.savings-token {
+  position: relative;
+  width: clamp(56.58px, 3.657vw, 70.38px);
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.07px;
+}
+.savings-token .token-progress {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.savings-token > svg:not(.token-progress) {
+  width: 44%;
+  height: 36%;
+}
+.savings-token span {
+  font-size: clamp(8.97px, 0.6555vw, 12.42px);
+  line-height: 1.2;
+}
+.savings-token.unfunded {
+  color: #7b8b7b;
+}
+.savings-reserve {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: clamp(51.06px, 3.243vw, 62.1px);
+  aspect-ratio: 1;
+  border: 0.69px dashed #ceb78799;
+  border-radius: 50%;
+}
+.savings-reserve strong {
+  font-size: clamp(9.66px, 0.69vw, 13.11px);
+  font-weight: 400;
+}
+.savings-reserve span {
+  font-size: clamp(8.97px, 0.621vw, 11.73px);
+  margin-top: 2.07px;
+}
+.savings-caption {
+  font-size: clamp(12.42px, 0.828vw, 15.87px);
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 10.35px 0 0;
+}
+.savings-token span b {
+  display: block;
+  font-weight: 400;
+}
+.savings-token span small {
+  display: block;
+  font-size: 0.8em;
+}

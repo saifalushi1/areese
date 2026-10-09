@@ -2,6 +2,7 @@ import { FaithPerspective } from "./components/FaithPerspective";
 import { CostComparison } from "./components/CostComparison";
 import { FarmScene } from "./components/FarmScene";
 import { GazaAidScene } from "./components/GazaAidScene";
+import { SavingsVisual } from "./components/SavingsVisual";
 import { useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import {
@@ -34,7 +35,7 @@ const choices = [
   {
     name: "Build a home",
     kind: "home",
-    title: "A beginning you can build on.",
+    title: "A beginning we can build on.",
     text: "That money can become part of a home fund. A place for everyday life, long after the flowers have wilted.",
     quote: "movie nights and yapping are waiting for us",
     unit: 60000,
@@ -44,11 +45,11 @@ const choices = [
   {
     name: "Feed orphans",
     kind: "give",
-    title: "Let your joy reach someone else.",
-    text: "An evening of luxury can become many days of meals. Choose a trusted charity supporting orphaned children and let your new beginning help theirs.",
+    title: "Let our joy reach someone else.",
+    text: "An evening of luxury can become many days of meals. Choose a trusted charity supporting orphaned children and let our new beginning help theirs.",
     unit: 3,
     suffix: "meals funded",
-    note: "Example: $3 per meal. This is a planning assumption, not a charity quote. Check your chosen programme’s costs, including delivery.",
+    note: "Example: $3 per meal.",
   },
   {
     name: "Hajj together",
@@ -316,7 +317,7 @@ export default function App() {
       rows: [
         ["Hajj together", hajjFund, "hajj"],
         ["Travel together", Math.floor(afterHajj * 0.25), "travel"],
-        ["Build your home fund", Math.floor(afterHajj * 0.6), "home"],
+        ["Build our home fund", Math.floor(afterHajj * 0.6), "home"],
         ["Support orphan meals", Math.floor(afterHajj * 0.15), "give"],
       ],
     },
@@ -324,7 +325,7 @@ export default function App() {
       name: "Home first",
       note: "60% home · 20% Hajj · 10% travel · 10% giving.",
       rows: [
-        ["Build your home fund", Math.floor(saved * 0.6), "home"],
+        ["Build our home fund", Math.floor(saved * 0.6), "home"],
         ["Hajj together", Math.floor(saved * 0.2), "hajj"],
         ["Travel together", Math.floor(saved * 0.1), "travel"],
         ["Support orphan meals", Math.floor(saved * 0.1), "give"],
@@ -335,7 +336,7 @@ export default function App() {
       note: "50% travel · 30% home · 15% Hajj · 5% giving.",
       rows: [
         ["Travel together", Math.floor(saved * 0.5), "travel"],
-        ["Build your home fund", Math.floor(saved * 0.3), "home"],
+        ["Build our home fund", Math.floor(saved * 0.3), "home"],
         ["Hajj together", Math.floor(saved * 0.15), "hajj"],
         ["Support orphan meals", Math.floor(saved * 0.05), "give"],
       ],
@@ -345,7 +346,7 @@ export default function App() {
       note: "50% giving · 25% home · 15% Hajj · 10% travel.",
       rows: [
         ["Support orphan meals", Math.floor(saved * 0.5), "give"],
-        ["Build your home fund", Math.floor(saved * 0.25), "home"],
+        ["Build our home fund", Math.floor(saved * 0.25), "home"],
         ["Hajj together", Math.floor(saved * 0.15), "hajj"],
         ["Travel together", Math.floor(saved * 0.1), "travel"],
       ],
@@ -391,8 +392,8 @@ export default function App() {
                 <em>A simple walimah.</em>
               </h1>
               <p className="lead">
-                What if your biggest day didn’t cost
-                <br /> your dreams for tomorrow?
+                What if our biggest day didn’t cost
+                <br /> our dreams for tomorrow?
               </p>
               <p className="hero-note">
                 An invitation to celebrate simply. And live fully.
@@ -445,7 +446,7 @@ export default function App() {
             <div className="budget-panel">
               <div className="budget-control">
                 <div className="range-heading">
-                  <label htmlFor="budget">Your big-wedding budget</label>
+                  <label htmlFor="budget">Our big-wedding budget</label>
                   <output htmlFor="budget">{money(budget)}</output>
                 </div>
                 <input
@@ -487,13 +488,13 @@ export default function App() {
                 </div>
               </div>
               <div className="saved">
-                <span>Room for your future</span>
+                <span>Room for our future</span>
                 <strong>{money(saved)}</strong>
               </div>
             </div>
             {simple > budget && (
               <p className="small-note" role="status">
-                Your celebration allowance exceeds this budget. Lower the
+                Our celebration allowance exceeds this budget. Lower the
                 allowance to free up money.
               </p>
             )}
@@ -529,20 +530,11 @@ export default function App() {
                     <Scene kind={choice.kind} />
                   </motion.div>
                 </AnimatePresence>
-                <div className="allocation" aria-hidden="true">
-                  {Array.from({ length: 50 }, (_, i) => (
-                    <span
-                      key={`${selected}-${i}`}
-                      className={saved > 0 ? "allocated" : ""}
-                      style={{
-                        animationDelay: reduced ? "0ms" : `${i * 20}ms`,
-                      }}
-                    />
-                  ))}
-                </div>
-                <p className="art-note">
-                  Each dot is 1/50 of your savings → {choice.name.toLowerCase()}
-                </p>
+                <SavingsVisual
+                  kind={choice.kind}
+                  saved={saved}
+                  mealCost={mealCost}
+                />
               </div>
               <div className="alternative-copy">
                 <p className="eyebrow">IMAGINE INSTEAD</p>
@@ -573,7 +565,7 @@ export default function App() {
                 {selected === 2 && (
                   <div className="meal-control">
                     <label htmlFor="meal">
-                      Try your charity’s cost per meal ($)
+                      Our charity’s cost per meal ($)
                     </label>
                     <input
                       id="meal"
@@ -612,14 +604,14 @@ export default function App() {
           </section>
           <section className="split-section section-wrap">
             <Reveal>
-              <p className="eyebrow">03 / YOU CAN HAVE BOTH</p>
+              <p className="eyebrow">03 / WE CAN HAVE BOTH</p>
               <h2>
                 A little celebration.
                 <br />
                 <em>A bigger life.</em>
               </h2>
               <p className="lead">
-                You don’t have to put everything into one choice.
+                We don’t have to put everything into one choice.
               </p>
             </Reveal>
             <Reveal className="split-plan">
@@ -640,7 +632,7 @@ export default function App() {
                 ))}
               </div>
               <p className="plan-label">
-                {plan.name.toUpperCase()} · YOUR {money(saved)}
+                {plan.name.toUpperCase()} · OUR {money(saved)}
               </p>
               <div
                 className="plan-allocations"
@@ -682,13 +674,13 @@ export default function App() {
                 <em>Keep the wedding simple.</em>
               </h2>
               <p>
-                Gather your people. Share a meal. Honour your commitments.
+                Gather our people. Share a meal. Honour our commitments.
                 <br />
-                Save something for all the days that follow. And begin your
+                Save something for all the days that follow. And begin our
                 marriage with barakah
               </p>
               <a className="button" href="#possibilities">
-                Explore your own numbers <span>↑</span>
+                Explore our own numbers <span>↑</span>
               </a>
             </Reveal>
           </section>

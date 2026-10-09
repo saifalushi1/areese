@@ -41,7 +41,7 @@ export function CostComparison({
         </div>
       ))}
       <p className="cost-savings">
-        {money(Math.max(0, budget - simple))} left for your future.
+        {money(Math.max(0, budget - simple))} left for our future.
       </p>
     </div>
   );

@@ -7,7 +7,7 @@ const reflections = [
     title: "Marriage is worth celebrating. Waste is worth questioning.",
     paragraphs: [
       "A wedding is not automatically haram. The Prophet ﷺ encouraged a walimah — a wedding meal. The concern is what we bring into it: waste, months of stress, pressure to impress, music, and not following the sunna.",
-      "A big bill doesn’t make a marriage better. A modest celebration can honour your faith, bring people together, and leave room for the life you actually want.",
+      "A big bill doesn’t make a marriage better. A modest celebration can honour our faith, bring people together, and leave room for the life we actually want.",
     ],
     links: [
       [
@@ -19,7 +19,7 @@ const reflections = [
   {
     title: "The Prophet ﷺ Explicitly Praised Simple Weddings",
     paragraphs: [
-      "The Prophet Muhammad (ﷺ) said: “The most blessed nikah is the one with the least expenses.” This narration is attributed to al-Bayhaqi; scholars differ over the grading of its chains. In Sunan Abu Dawood (2117), he said: “The best marriage is the one that is most easy.”",
+      "The Prophet Muhammad (ﷺ) said: “The most blessed nikah is the one with the least expenses.” This narration is attributed to al-Bayhaqi. In Sunan Abu Dawood (2117), he said: “The best marriage is the one that is most easy.”",
       "Reports about Fatima (RA) describe simple household furnishings, including a water skin and a pillow. These were wedding gifts, rather than a list of her mahr. Her example invites us to ask: why should a new marriage depend on a banquet hall, a designer gown, or elaborate floral arrangements?",
     ],
     links: [
@@ -35,7 +35,7 @@ const reflections = [
     title: "Extravagance (Israf) is a Major Sin in Islam",
     paragraphs: [
       "The Quran tells us to eat and drink without extravagance, and says Allah does not love the extravagant (Surah Al-A’raf 7:31). The Prophet ﷺ also warned against gossip, excessive questioning, and wasting wealth (Sahih al-Bukhari 2408).",
-      "A $36,000–$52,000 celebration for a single evening deserves serious reflection. Are we spending within our means, or paying for appearances while neglecting responsibilities? That range is an example, not a current wedding-cost estimate. A price alone does not establish israf; wastefulness depends on the circumstances.",
+      "A $36,000–$52,000 celebration for a single evening deserves serious reflection. Are we spending within our means, or paying for appearances while neglecting responsibilities?",
     ],
     links: [
       ["Quran 7:31", "https://quran.com/7/31"],
@@ -45,7 +45,7 @@ const reflections = [
   {
     title: "Haram Has No Place at a Wedding",
     paragraphs: [
-      "Celebrating a wedding should not involve prohibited practices. Neither should it involve indecent entertainment, obscene songs, or conduct that crosses Islamic boundaries. Instrumental music, backbiting, extravagance, and riyah are all common within weddings and explicitly forbidden. It’s not fair to yourself and your husband to create an environment that enables this.",
+      "Celebrating a wedding should not involve prohibited practices. Neither should it involve indecent entertainment, obscene songs, or conduct that crosses Islamic boundaries. Instrumental music, backbiting, extravagance, and riyah are all common within weddings and explicitly forbidden. It’s not fair to ourselves or each other to create an environment that enables this.",
     ],
     links: [
       ["Avoid backbiting · Quran 49:12", "https://quran.com/49/12"],
@@ -56,7 +56,7 @@ const reflections = [
     title: "Riya (Showing Off) Threatens the Barakah",
     paragraphs: [
       "In Sahih Muslim 1905, the Prophet ﷺ described a man who appeared to have died as a martyr, but had fought to be called courageous. He was condemned because his outwardly noble act was done for people’s praise.",
-      "If showing off can corrupt such a serious act, it should make us examine our intentions at a wedding. “You’re only a bride once” should not become a reason to chase approval, strain our finances, or turn a sacred commitment into a performance for Instagram. Aim for sincerity and a celebration within your means. A venue or price tag cannot tell us how much blessing a marriage has.",
+      "If showing off can corrupt such a serious act, it should make us examine our intentions at a wedding. “You’re only a bride once” should not become a reason to chase approval, strain our finances, or turn a sacred commitment into a performance for Instagram. Aim for sincerity and a celebration within our means. A venue or price tag cannot tell us how much blessing a marriage has.",
     ],
     links: [["Muslim 1905a", "https://sunnah.com/muslim:1905a"]],
   },
@@ -64,7 +64,7 @@ const reflections = [
     title: "The Nikah Itself is the Ibadah — Not the Party",
     paragraphs: [
       "Marriage should not be measured by the size of its party. The nikah, its religious requirements, the mahr, and the responsibilities spouses accept matter more than the catering. A simple celebration can honour the commitment without making it harder to begin married life.",
-      "A narration attributed to the Prophet ﷺ says that marriage completes half of a person’s religion, and calls them to fear Allah regarding the remaining half. Invest in the marriage and the life you will share, rather than treating an expensive party as a religious requirement.",
+      "A narration attributed to the Prophet ﷺ says that marriage completes half of a person’s religion, and calls them to fear Allah regarding the remaining half. Invest in the marriage and the life we will share, rather than treating an expensive party as a religious requirement.",
     ],
     links: [
       [
