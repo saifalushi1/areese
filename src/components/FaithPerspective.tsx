@@ -19,7 +19,7 @@ const reflections = [
   {
     title: "The Prophet ﷺ Explicitly Praised Simple Weddings",
     paragraphs: [
-      "The Prophet Muhammad (ﷺ) said: “The most blessed nikah is the one with the least expenses.” This narration is attributed to al-Bayhaqi; scholars differ over the grading of its chains. In Sunan Abu Dawood (2117), he said: “The best marriage is the one that is most easy.”",
+      "The Prophet Muhammad (ﷺ) said: “The most blessed nikah is the one with the least expenses.” This narration is attributed to al-Bayhaqi. In Sunan Abu Dawood (2117), he said: “The best marriage is the one that is most easy.”",
       "Reports about Fatima (RA) describe simple household furnishings, including a water skin and a pillow. These were wedding gifts, rather than a list of her mahr. Her example invites us to ask: why should a new marriage depend on a banquet hall, a designer gown, or elaborate floral arrangements?",
     ],
     links: [
@@ -35,7 +35,7 @@ const reflections = [
     title: "Extravagance (Israf) is a Major Sin in Islam",
     paragraphs: [
       "The Quran tells us to eat and drink without extravagance, and says Allah does not love the extravagant (Surah Al-A’raf 7:31). The Prophet ﷺ also warned against gossip, excessive questioning, and wasting wealth (Sahih al-Bukhari 2408).",
-      "A $36,000–$52,000 celebration for a single evening deserves serious reflection. Are we spending within our means, or paying for appearances while neglecting responsibilities? That range is an example, not a current wedding-cost estimate. A price alone does not establish israf; wastefulness depends on the circumstances.",
+      "A $36,000–$52,000 celebration for a single evening deserves serious reflection. Are we spending within our means, or paying for appearances while neglecting responsibilities?",
     ],
     links: [
       ["Quran 7:31", "https://quran.com/7/31"],

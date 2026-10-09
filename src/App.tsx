@@ -2,6 +2,7 @@ import { FaithPerspective } from "./components/FaithPerspective";
 import { CostComparison } from "./components/CostComparison";
 import { FarmScene } from "./components/FarmScene";
 import { GazaAidScene } from "./components/GazaAidScene";
+import { SavingsVisual } from "./components/SavingsVisual";
 import { useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import {
@@ -487,7 +488,7 @@ export default function App() {
                 </div>
               </div>
               <div className="saved">
-                <span>Room for your future</span>
+                <span>Room for our future</span>
                 <strong>{money(saved)}</strong>
               </div>
             </div>
@@ -529,20 +530,11 @@ export default function App() {
                     <Scene kind={choice.kind} />
                   </motion.div>
                 </AnimatePresence>
-                <div className="allocation" aria-hidden="true">
-                  {Array.from({ length: 50 }, (_, i) => (
-                    <span
-                      key={`${selected}-${i}`}
-                      className={saved > 0 ? "allocated" : ""}
-                      style={{
-                        animationDelay: reduced ? "0ms" : `${i * 20}ms`,
-                      }}
-                    />
-                  ))}
-                </div>
-                <p className="art-note">
-                  Each dot is 1/50 of your savings → {choice.name.toLowerCase()}
-                </p>
+                <SavingsVisual
+                  kind={choice.kind}
+                  saved={saved}
+                  mealCost={mealCost}
+                />
               </div>
               <div className="alternative-copy">
                 <p className="eyebrow">IMAGINE INSTEAD</p>
