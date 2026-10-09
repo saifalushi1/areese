@@ -1,83 +1,8 @@
+import { CelebrationScene } from "./CelebrationScenes";
+
 export function PerspectiveScene({ index }: { index: number }) {
-  if (index === 0)
-    return (
-      <g>
-        <defs>
-          <linearGradient id="frame-warm">
-            <stop stopColor="#dab86c" stopOpacity=".25" />
-            <stop offset="1" stopColor="#dab86c" stopOpacity=".03" />
-          </linearGradient>
-        </defs>
-        <rect x="28" y="24" width="344" height="192" rx="24" fill="#182824" />
-        <path
-          d="M52 24H200V216H52Q28 216 28 192V48Q28 24 52 24Z"
-          fill="url(#frame-warm)"
-          stroke="none"
-        />
-        <path d="M200 40V200" opacity=".3" />
-        <g className="frame-joy">
-          <circle cx="99" cy="90" r="26" stroke="#e5c77f" strokeWidth="4" />
-          <circle cx="133" cy="90" r="26" stroke="#e5c77f" strokeWidth="4" />
-          <path d="M123 63L133 53L143 63L133 72Z" fill="#edd9a5" />
-          <path
-            d="M44 171L75 142Q83 133 93 141L108 154L121 148Q130 144 135 152L153 167L183 180L171 199L144 184L129 188Q120 190 111 183L87 163L59 190"
-            fill="#b69a6b"
-          />
-          <path
-            d="M93 141L111 136Q120 131 126 137L143 151Q149 160 139 165L124 154L112 158"
-            fill="#d6bd91"
-          />
-          {[55, 174].map((x) => (
-            <g key={x} transform={`translate(${x} 62)`}>
-              <path d="M0 15V39M0 29L-10 23M0 33L10 27" stroke="#80946e" />
-              <path
-                d="M0-8C-16-19-24 0-9 6C-23 17-3 25 0 12C5 26 23 15 10 6C26-1 13-19 0-8Z"
-                fill="#d4b681"
-              />
-              <circle r="4" fill="#f0d998" />
-            </g>
-          ))}
-        </g>
-        <g stroke="#8a9f9f" className="frame-waste">
-          {[
-            [244, 65],
-            [259, 45],
-            [281, 41],
-            [306, 47],
-            [318, 66],
-            [315, 87],
-            [301, 103],
-            [285, 113],
-            [282, 132],
-            [282, 150],
-            [282, 181],
-          ].map(([x, y], i) => (
-            <g key={i} transform={`translate(${x} ${y})`}>
-              {i % 3 === 0 ? (
-                <>
-                  <ellipse rx="10" ry="7" fill="#3a4c4a" />
-                  <path d="M-5-1L0-4L5 2L-3 3" strokeWidth="3" />
-                </>
-              ) : i % 3 === 1 ? (
-                <>
-                  <path d="M-9 5L-5-7L9-2L6 9Z" fill="#405150" />
-                  <path d="M-5-1L5 3M-3-4L0 7" />
-                </>
-              ) : (
-                <>
-                  <circle r="8" fill="#2f4140" />
-                  <path d="M-6-6L6 6M6-6L-6 6" />
-                </>
-              )}
-            </g>
-          ))}
-          <path
-            d="M226 203L244 193L256 207L270 198L289 209L316 194L344 204"
-            opacity=".4"
-          />
-        </g>
-      </g>
-    );
+  if (index === 0 || index === 3 || index === 5)
+    return <CelebrationScene index={index} />;
 
   if (index === 1)
     return (
@@ -173,15 +98,7 @@ export function PerspectiveScene({ index }: { index: number }) {
               d="M60 148Q70 157 79 148Q89 157 99 148Q108 157 115 148M69 129H107"
               stroke="#e4cf9e"
             />
-            <path d="M88 106V99M134 94V110M117 110H151M122 109V121M146 109V121M133 110V126" />
-            <circle cx="122" cy="124" r="3" fill="#dbc183" />
-            <circle cx="146" cy="124" r="3" fill="#dbc183" />
-            <circle cx="133" cy="129" r="3" fill="#dbc183" />
-            <path
-              d="M26 165L34 143L41 151L47 135L54 155L59 164Z"
-              fill="#71815a"
-            />
-            <path d="M31 145L39 138M44 139L52 133" />
+            <path d="M88 106V99" />
           </g>
           <g className="scale-load scale-modest">
             <path
@@ -199,7 +116,7 @@ export function PerspectiveScene({ index }: { index: number }) {
         <path d="M26 222H374" opacity=".3" />
         <path
           className="scale-crack"
-          d="M63 211L78 219L67 224L86 229L80 235M78 219L100 218L110 225"
+          d="M70 227L84 234L72 242L91 250L81 264M84 234L108 237L122 246M91 250L110 256"
           stroke="#d3ad75"
         />
       </g>

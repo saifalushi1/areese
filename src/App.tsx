@@ -25,6 +25,8 @@ const choices = [
     kind: "travel",
     title: "More places. More memories.",
     text: "Trade a few hours in a ballroom for time discovering the world together. Keep the celebration small. Make the adventure big.",
+    quote:
+      "tanzania, japan, and the rest of our dream vacations dont have to wait",
     unit: 6000,
     suffix: "trips for two",
     note: "Example: $6,000 per overseas trip for two, including flights and accommodation. Destination, dates and travel style change the cost.",
@@ -34,6 +36,7 @@ const choices = [
     kind: "home",
     title: "A beginning you can build on.",
     text: "That money can become part of a home fund. A place for everyday life, long after the flowers have wilted.",
+    quote: "movie nights and yapping are waiting for us",
     unit: 60000,
     suffix: "of a home fund",
     note: "Example goal: $60,000 (20% down payment) of a $300,000 home.",
@@ -300,14 +303,9 @@ export default function App() {
   const [selected, setSelected] = useState(0);
   const [selectedPlan, setSelectedPlan] = useState(0);
   const [mealCost, setMealCost] = useState(3);
-  const [paused, setPaused] = useState(false);
   const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll();
-  const heroY = useTransform(
-    scrollYProgress,
-    [0, 0.3],
-    [0, reduced || paused ? 0 : 100],
-  );
+  const heroY = useTransform(scrollYProgress, [0, 0.3], [0, reduced ? 0 : 100]);
   const saved = Math.max(0, budget - simple);
   const hajjFund = Math.min(saved, choices[3].unit);
   const afterHajj = saved - hajjFund;
@@ -362,8 +360,8 @@ export default function App() {
           saved / (selected === 2 ? mealCost : choice.unit),
         ).toLocaleString();
   return (
-    <MotionConfig reducedMotion={paused ? "always" : "user"}>
-      <div className={paused ? "experience paused" : "experience"}>
+    <MotionConfig reducedMotion="user">
+      <div className="experience">
         <motion.div
           className="reading-progress"
           style={{ scaleX: scrollYProgress }}
@@ -378,13 +376,6 @@ export default function App() {
           <nav aria-label="Main navigation">
             <a href="#perspective">The perspective</a>
             <a href="#possibilities">The possibilities</a>
-            <button
-              className="motion-toggle"
-              onClick={() => setPaused(!paused)}
-              aria-pressed={paused}
-            >
-              {paused ? "Resume motion" : "Pause motion"}
-            </button>
           </nav>
         </header>
         <main id="main">
@@ -544,8 +535,7 @@ export default function App() {
                       key={`${selected}-${i}`}
                       className={saved > 0 ? "allocated" : ""}
                       style={{
-                        animationDelay:
-                          paused || reduced ? "0ms" : `${i * 20}ms`,
+                        animationDelay: reduced ? "0ms" : `${i * 20}ms`,
                       }}
                     />
                   ))}
@@ -558,6 +548,9 @@ export default function App() {
                 <p className="eyebrow">IMAGINE INSTEAD</p>
                 <h3>{choice.title}</h3>
                 <p>{choice.text}</p>
+                {"quote" in choice && (
+                  <p className="possibility-quote">“{choice.quote}”</p>
+                )}
                 <div className="result" aria-live="polite" aria-atomic="true">
                   <AnimatePresence mode="wait">
                     <motion.strong

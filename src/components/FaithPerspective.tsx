@@ -64,7 +64,7 @@ const reflections = [
     title: "The Nikah Itself is the Ibadah — Not the Party",
     paragraphs: [
       "Marriage should not be measured by the size of its party. The nikah, its religious requirements, the mahr, and the responsibilities spouses accept matter more than the catering. A simple celebration can honour the commitment without making it harder to begin married life.",
-      "A narration attributed to the Prophet ﷺ says that marriage completes half of a person’s religion, and calls them to fear Allah regarding the remaining half. Scholars differ over the grading of these reports; al-Albani accepted supporting narrations. The practical reminder is clear: invest in the marriage and the life you will share, rather than treating an expensive party as a religious requirement.",
+      "A narration attributed to the Prophet ﷺ says that marriage completes half of a person’s religion, and calls them to fear Allah regarding the remaining half. Invest in the marriage and the life you will share, rather than treating an expensive party as a religious requirement.",
     ],
     links: [
       [
@@ -81,17 +81,17 @@ const reflections = [
 
 function TopicVisual({ index }: { index: number }) {
   const labels = [
-    "Two-sided frame: golden rings, flowers and joined hands beside a question mark made of wasted food and ornaments",
+    "The spotlight and the question mark: a warm wedding table beneath a gentle question mark made of light",
     "The humble tent: a small gathering and glowing lanterns beneath a vast starry sky",
-    "The scale: excessive cakes, food and chandeliers outweigh a modest meal and crack the ground",
-    "A shield protecting a celebration",
+    "The scale: a towering cake outweighs a modest meal, cracking the ground below the heavy pan",
+    "The clean table: white linens, dates, flowers and simple dishes within warm light, holding smoky music notes and a goblet outside",
     "The leaking vessel: an ornate jar fills with golden light, then loses it through cracks beneath a spotlight",
-    "A marriage contract with two wedding rings",
+    "The small circle, the wide horizon: a gathering on a rug, joined hands beneath a lantern, and an open road toward sunrise",
   ];
   return (
     <svg
       className="faith-visual"
-      viewBox="0 0 400 240"
+      viewBox={index === 2 ? "0 0 400 270" : "0 0 400 240"}
       fill="none"
       role="img"
       aria-label={labels[index]}
@@ -113,41 +113,9 @@ function TopicVisual({ index }: { index: number }) {
         {index === 0 && <PerspectiveScene index={index} />}
         {index === 1 && <PerspectiveScene index={index} />}
         {index === 2 && <PerspectiveScene index={index} />}
-        {index === 3 && (
-          <g>
-            <path
-              className="faith-draw"
-              d="M200 37L279 68V132Q276 185 200 212Q124 185 121 132V68Z"
-              fill="#23382b"
-            />
-            <path
-              d="M166 127L190 152L238 99"
-              stroke="#a8bf8e"
-              strokeWidth="6"
-            />
-            <g className="faith-float" opacity=".65">
-              <path d="M71 73L80 88M322 75L332 62M65 174L80 169M321 172L336 181" />
-            </g>
-          </g>
-        )}
+        {index === 3 && <PerspectiveScene index={index} />}
         {index === 4 && <PerspectiveScene index={index} />}
-        {index === 5 && (
-          <g>
-            <path
-              className="faith-draw"
-              d="M104 47H260L285 73V198H104ZM260 47V73H285"
-              fill="#233329"
-            />
-            <path
-              d="M129 87H227M129 109H246M129 131H224M129 153H193"
-              opacity=".6"
-            />
-            <g className="faith-rings">
-              <circle cx="252" cy="175" r="27" />
-              <circle cx="285" cy="175" r="27" stroke="#9cba85" />
-            </g>
-          </g>
-        )}
+        {index === 5 && <PerspectiveScene index={index} />}
       </g>
     </svg>
   );
