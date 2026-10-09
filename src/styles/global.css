@@ -1909,30 +1909,30 @@ input[type="range"]::-moz-range-thumb {
 }
 .savings-visual {
   color: var(--gold);
-  margin: 18px auto 0;
+  margin: 9px auto 0;
   text-align: center;
 }
 .savings-title {
-  font-size: clamp(20px, 1.5vw, 28px);
-  margin: 0 0 15px;
+  font-size: clamp(10px, 0.75vw, 14px);
+  margin: 0 0 7.5px;
   font-family: var(--serif);
 }
 .savings-tokens {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 5px;
   justify-content: center;
   align-items: center;
 }
 .savings-token {
   position: relative;
-  width: clamp(82px, 5.3vw, 102px);
+  width: clamp(41px, 2.65vw, 51px);
   aspect-ratio: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 3px;
+  gap: 1.5px;
 }
 .savings-token .token-progress {
   position: absolute;
@@ -1946,7 +1946,7 @@ input[type="range"]::-moz-range-thumb {
   height: 36%;
 }
 .savings-token span {
-  font-size: clamp(13px, 0.95vw, 18px);
+  font-size: clamp(6.5px, 0.475vw, 9px);
   line-height: 1.2;
 }
 .savings-token.unfunded {
@@ -1956,24 +1956,24 @@ input[type="range"]::-moz-range-thumb {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: clamp(74px, 4.7vw, 90px);
+  width: clamp(37px, 2.35vw, 45px);
   aspect-ratio: 1;
-  border: 1px dashed #ceb78799;
+  border: 0.5px dashed #ceb78799;
   border-radius: 50%;
 }
 .savings-reserve strong {
-  font-size: clamp(14px, 1vw, 19px);
+  font-size: clamp(7px, 0.5vw, 9.5px);
   font-weight: 400;
 }
 .savings-reserve span {
-  font-size: clamp(13px, 0.9vw, 17px);
-  margin-top: 3px;
+  font-size: clamp(6.5px, 0.45vw, 8.5px);
+  margin-top: 1.5px;
 }
 .savings-caption {
-  font-size: clamp(18px, 1.2vw, 23px);
+  font-size: clamp(9px, 0.6vw, 11.5px);
   color: var(--muted);
   line-height: 1.5;
-  margin: 15px 0 0;
+  margin: 7.5px 0 0;
 }
 .savings-token span b {
   display: block;
