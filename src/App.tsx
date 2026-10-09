@@ -1,5 +1,6 @@
 import { FaithPerspective } from "./components/FaithPerspective";
 import { CostComparison } from "./components/CostComparison";
+import { FarmScene } from "./components/FarmScene";
 import { useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
 import {
@@ -34,7 +35,7 @@ const choices = [
     text: "That money can become part of a home fund. A place for everyday life, long after the flowers have wilted.",
     unit: 60000,
     suffix: "of a home fund",
-    note: "Example goal: $60,000 toward a home. This is a savings target, not a house price or a mortgage recommendation.",
+    note: "Example goal: $60,000 (20% down payment) of a $300,000 home.",
   },
   {
     name: "Feed orphans",
@@ -68,7 +69,7 @@ function Scene({ kind }: { kind: Kind }) {
         {
           wedding: "An illuminated wedding arch and banquet tables",
           travel: "A plane crossing mountains under a golden moon",
-          home: "A house with warm windows and a growing garden",
+          home: "A farm with a barn, fenced pasture, and two animated horses",
           give: "Bowls of food underneath an olive tree",
           hajj: "The Kaaba with its gold band, surrounded by a softly moving courtyard of pilgrims",
         }[kind]
@@ -190,46 +191,7 @@ function Scene({ kind }: { kind: Kind }) {
           />
         </g>
       )}
-      {kind === "home" && (
-        <g stroke="#bba578" strokeWidth="2">
-          <path
-            className="draw"
-            d="M210 271L399 113L590 271M240 246V437H560V246M278 215V154H316V184"
-          />
-          <path
-            d="M220 272L400 126L580 272"
-            strokeWidth="10"
-            stroke="#617a65"
-          />
-          <path d="M370 437V328H431V437" fill="#273d32" />
-          {[285, 467].map((x) => (
-            <g key={x}>
-              <rect
-                className="window-glow"
-                x={x}
-                y="287"
-                width="48"
-                height="62"
-                fill="#cbb47b"
-              />
-              <path
-                d={`M${x + 24} 287V349M${x} 318H${x + 48}`}
-                stroke="#24392e"
-              />
-            </g>
-          ))}
-          <circle cx="400" cy="239" r="24" fill="#cbb47b" opacity=".6" />
-          <path d="M358 478L370 437M443 478L431 437M160 437V331M638 437V313" />
-          <g className="leaves" fill="#637d58" stroke="none">
-            <ellipse cx="160" cy="318" rx="42" ry="61" />
-            <ellipse cx="638" cy="305" rx="52" ry="72" />
-          </g>
-          <path
-            d="M70 454Q165 426 275 454M510 454Q630 424 730 454"
-            stroke="#5e7c60"
-          />
-        </g>
-      )}
+      {kind === "home" && <FarmScene />}
       {kind === "give" && (
         <g>
           <path
@@ -387,6 +349,7 @@ export default function App() {
   const [budget, setBudget] = useState(50000);
   const [simple, setSimple] = useState(10000);
   const [selected, setSelected] = useState(0);
+  const [selectedPlan, setSelectedPlan] = useState(0);
   const [mealCost, setMealCost] = useState(3);
   const [paused, setPaused] = useState(false);
   const reduced = useReducedMotion();
@@ -399,12 +362,49 @@ export default function App() {
   const saved = Math.max(0, budget - simple);
   const hajjFund = Math.min(saved, choices[3].unit);
   const afterHajj = saved - hajjFund;
-  const plan = [
-    ["Hajj together", hajjFund],
-    ["Travel together", Math.floor(afterHajj * 0.25)],
-    ["Build your home fund", Math.floor(afterHajj * 0.6)],
-    ["Support orphan meals", Math.floor(afterHajj * 0.15)],
+  const planOptions = [
+    {
+      name: "Hajj first",
+      note: "Put up to $30,000 toward Hajj for two, then split the remainder: 25% travel · 60% home · 15% giving.",
+      rows: [
+        ["Hajj together", hajjFund, "hajj"],
+        ["Travel together", Math.floor(afterHajj * 0.25), "travel"],
+        ["Build your home fund", Math.floor(afterHajj * 0.6), "home"],
+        ["Support orphan meals", Math.floor(afterHajj * 0.15), "give"],
+      ],
+    },
+    {
+      name: "Home first",
+      note: "60% home · 20% Hajj · 10% travel · 10% giving.",
+      rows: [
+        ["Build your home fund", Math.floor(saved * 0.6), "home"],
+        ["Hajj together", Math.floor(saved * 0.2), "hajj"],
+        ["Travel together", Math.floor(saved * 0.1), "travel"],
+        ["Support orphan meals", Math.floor(saved * 0.1), "give"],
+      ],
+    },
+    {
+      name: "Travel first",
+      note: "50% travel · 30% home · 15% Hajj · 5% giving.",
+      rows: [
+        ["Travel together", Math.floor(saved * 0.5), "travel"],
+        ["Build your home fund", Math.floor(saved * 0.3), "home"],
+        ["Hajj together", Math.floor(saved * 0.15), "hajj"],
+        ["Support orphan meals", Math.floor(saved * 0.05), "give"],
+      ],
+    },
+    {
+      name: "Giving first",
+      note: "50% giving · 25% home · 15% Hajj · 10% travel.",
+      rows: [
+        ["Support orphan meals", Math.floor(saved * 0.5), "give"],
+        ["Build your home fund", Math.floor(saved * 0.25), "home"],
+        ["Hajj together", Math.floor(saved * 0.15), "hajj"],
+        ["Travel together", Math.floor(saved * 0.1), "travel"],
+      ],
+    },
   ] as const;
+  const plan = planOptions[selectedPlan];
   const choice = choices[selected];
   const result =
     selected === 1 || selected === 3
@@ -681,32 +681,52 @@ export default function App() {
               </p>
             </Reveal>
             <Reveal className="split-plan">
+              <div
+                className="plan-options"
+                role="group"
+                aria-label="Choose a savings plan"
+              >
+                {planOptions.map((option, i) => (
+                  <button
+                    key={option.name}
+                    className={selectedPlan === i ? "active" : ""}
+                    aria-pressed={selectedPlan === i}
+                    onClick={() => setSelectedPlan(i)}
+                  >
+                    {option.name}
+                  </button>
+                ))}
+              </div>
               <p className="plan-label">
-                ONE POSSIBLE PLAN FOR YOUR {money(saved)}
+                {plan.name.toUpperCase()} · YOUR {money(saved)}
               </p>
-              {plan.map(([label, amount]) => (
-                <div className="plan-row" key={label}>
-                  <div>
-                    <span>{label}</span>
-                    <strong>{money(amount)}</strong>
+              <div
+                className="plan-allocations"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                {plan.rows.map(([label, amount, goal]) => (
+                  <div className="plan-row" key={label} data-goal={goal}>
+                    <div>
+                      <span>{label}</span>
+                      <strong>{money(amount)}</strong>
+                    </div>
+                    <div className="plan-track">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{
+                          width: `${saved > 0 ? (amount / saved) * 100 : 0}%`,
+                        }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.2 }}
+                      />
+                    </div>
                   </div>
-                  <div className="plan-track">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{
-                        width: `${saved > 0 ? (amount / saved) * 100 : 0}%`,
-                      }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.2 }}
-                    />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
               <p className="small-note">
-                Example plan: put up to $30,000 toward Hajj for two, then split
-                the remaining savings: 25% travel · 60% home · 15% giving.
-                Whole-dollar figures are rounded down; any remainder stays in
-                savings.
+                Example plan: {plan.note} Whole-dollar figures are rounded down;
+                any remainder stays in savings.
               </p>
             </Reveal>
           </section>

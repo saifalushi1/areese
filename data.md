@@ -30,10 +30,14 @@ These are planning assumptions, not market averages, charity quotes, or financia
 
 - Starting wedding budget: USD 50,000; simple celebration: USD 10,000; savings: USD 40,000.
 - Overseas trip for two: USD 6,000. Complete trips are rounded down and the remainder is shown.
-- Home savings goal: USD 60,000. The displayed percentage is rounded to the nearest whole percent.
+- Home savings goal: USD 60,000, illustrated as a 20% down payment on an example USD 300,000 home. The displayed percentage is rounded to the nearest whole percent. The farm-and-horses visual represents the aspiration, not a property advertised at that price.
 - Hajj savings goal for two: USD 30,000, an illustrative planning target rather than a package quote. The percentage is rounded to the nearest whole percent, with the remainder or shortfall shown separately. First-year completion depends on the Hajj dates, eligibility, permits, and package availability. Official packages and guidance: https://hajj.nusuk.sa/.
 - The cost comparison uses horizontal bars on a shared scale equal to the larger celebration cost. At the defaults, the USD 10,000 walimah bar is 20% of the USD 50,000 wedding bar. If the walimah allowance exceeds the wedding budget, the scale expands to keep both costs proportional.
 - Orphan meals: USD 3 each by default, adjustable between USD 1 and USD 100. Meals are rounded down. Check programme costs and delivery charges with the chosen charity.
 - Each alternative separately uses the entire savings amount. Alternatives are not additive.
-- Combined example: fund Hajj first, up to USD 30,000, then allocate the remaining savings 25% travel, 60% home, 15% giving. At the defaults, this gives USD 30,000 Hajj, USD 2,500 travel, USD 6,000 home, and USD 1,500 giving. Each dollar allocation is rounded down; the remainder stays in savings.
+- Hajj-first plan: fund Hajj up to USD 30,000, then allocate the remainder 25% travel, 60% home, 15% giving. At the defaults: USD 30,000 Hajj, USD 2,500 travel, USD 6,000 home, USD 1,500 giving.
+- Home-first plan: 60% home, 20% Hajj, 10% travel, 10% giving. At the defaults: USD 24,000 home, USD 8,000 Hajj, USD 4,000 travel, USD 4,000 giving.
+- Travel-first plan: 50% travel, 30% home, 15% Hajj, 5% giving. At the defaults: USD 20,000 travel, USD 12,000 home, USD 6,000 Hajj, USD 2,000 giving.
+- Giving-first plan: 50% giving, 25% home, 15% Hajj, 10% travel. At the defaults: USD 20,000 giving, USD 10,000 home, USD 6,000 Hajj, USD 4,000 travel.
+- Each plan’s whole-dollar allocations are rounded down; any remainder stays in savings.
 - A celebration allowance above the selected budget results in zero savings, with a visible explanation.

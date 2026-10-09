@@ -1656,3 +1656,56 @@ input[type="range"]::-moz-range-thumb {
     min-height: 0;
   }
 }
+.plan-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 26px;
+}
+.plan-options button {
+  padding: 12px 14px;
+  font-size: clamp(20px, 1.3vw, 25px);
+  color: #c5cebf;
+  background: transparent;
+  border: 1px solid #a6b79040;
+  text-align: left;
+}
+.plan-options button.active {
+  color: var(--gold);
+  border-color: var(--gold);
+  background: #2b3928;
+}
+.plan-row[data-goal="hajj"] .plan-track > div {
+  background: var(--gold);
+}
+.plan-row[data-goal="travel"] .plan-track > div {
+  background: #8ba882;
+}
+.plan-row[data-goal="home"] .plan-track > div {
+  background: #d4cfad;
+}
+.plan-row[data-goal="give"] .plan-track > div {
+  background: #a7b796;
+}
+.horse-head {
+  transform-origin: 40px -20px;
+  animation: horse-nod 6s ease-in-out infinite;
+}
+.horse-tail {
+  transform-origin: -52px -14px;
+  animation: horse-tail 4s ease-in-out infinite;
+}
+.farm-grass {
+  animation: sway 6s ease-in-out infinite;
+  transform-origin: 400px 460px;
+}
+@keyframes horse-nod {
+  50% {
+    transform: rotate(7deg);
+  }
+}
+@keyframes horse-tail {
+  50% {
+    transform: rotate(-12deg);
+  }
+}

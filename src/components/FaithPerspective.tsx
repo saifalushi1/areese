@@ -5,7 +5,7 @@ const reflections = [
   {
     title: "Marriage is worth celebrating. Waste is worth questioning.",
     paragraphs: [
-      "A wedding is not automatically haram. The Prophet ﷺ encouraged a walimah — a wedding meal. The concern is what we bring into it: waste, interest-based borrowing, alcohol, or pressure to impress.",
+      "A wedding is not automatically haram. The Prophet ﷺ encouraged a walimah — a wedding meal. The concern is what we bring into it: waste, months of stress, pressure to impress, music, and not following the sunna.",
       "A big bill doesn’t make a marriage better. A modest celebration can honour your faith, bring people together, and leave room for the life you actually want.",
     ],
     links: [
